@@ -11,7 +11,7 @@
                         <a class="nav-link active" aria-current="page" href="<?php echo base_url() ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('pages/test_page') ?>">Diagnosis Diabetes</a>
+                        <a class="nav-link" href="<?php echo base_url('pages/test_page') ?>">Tes Diagnosis Diabetes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('pages/diabetic_symptoms') ?>">Gejala</a>
@@ -21,7 +21,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Tentang
+                            Lainnya
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="<?php echo base_url('pages/user_guide') ?>">Cara Penggunaan</a></li>

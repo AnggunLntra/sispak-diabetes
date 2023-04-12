@@ -2,7 +2,7 @@
     <h1 class="fw-bold text-center my-5">Tipe-Tipe Diabetes</h1>
     <div class="row">
         <div class="col-lg-4 col-6 mb-3 mb-lg-0">
-            <div class="card border-danger shadow">
+            <div class="card bg-light-subtle border-danger shadow">
                 <div class="card-title text-center pt-3">
                     <span class="fs-4 fw-semibold">Diabetes Tipe 1</span>
                 </div>
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-6 mb-3 mb-lg-0">
-            <div class="card border-danger shadow">
+            <div class="card bg-light-subtle border-danger shadow">
                 <div class="card-title text-center pt-3">
                     <span class="fs-4 fw-semibold">Diabetes Tipe 2</span>
                 </div>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-6 mb-3 mb-lg-0">
-            <div class="card border-danger shadow">
+            <div class="card bg-light-subtle border-danger shadow">
                 <div class="card-title text-center pt-3">
                     <span class="fs-4 fw-semibold">Diabetes Gestasional</span>
                 </div>
