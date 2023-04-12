@@ -1,7 +1,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-danger fixed-top bg-danger py-lg-3">
         <div class="container-fluid">
-            <a class="navbar-brand text-uppercase" href="#">Sipakar</a>
+            <a class="navbar-brand text-uppercase fw-bolder text-light" href="#">Sipakar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -11,7 +11,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('pages/test_page') ?>">Tes</a>
+                        <a class="nav-link" href="<?php echo base_url('pages/test_page') ?>">Diagnosis Diabetes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url('pages/diabetic_symptoms') ?>">Gejala</a>
