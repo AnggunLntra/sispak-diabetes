@@ -11,22 +11,22 @@
                         <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tes</a>
+                        <a class="nav-link" href="<?php echo base_url('pages/test_page') ?>">Tes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Gejala</a>
+                        <a class="nav-link" href="<?php echo base_url('pages/diabetic_symptoms') ?>">Gejala</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tipe Diabetes</a>
+                        <a class="nav-link" href="<?php echo base_url('pages/diabetic_types') ?>">Tipe Diabetes</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tentang
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cara Penggunaan</a></li>
-                            <li><a class="dropdown-item" href="#">Kontak Kami</a></li>
-                            <li><a class="dropdown-item" href="#">Bantuan</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('pages/user_guide') ?>">Cara Penggunaan</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('pages/contact_us') ?>">Kontak Kami</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('pages/help') ?>">Bantuan</a></li>
                         </ul>
                     </li>
                 </ul>
