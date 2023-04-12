@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <h6 class="text-uppercase text-danger text-end">sipakar</h6>
+                        <p class="text-uppercase text-danger text-end small fw-bold m-0">sipakar</p>
                     </div>
                 </div>
             </div>
