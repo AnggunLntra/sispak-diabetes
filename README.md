@@ -79,8 +79,7 @@ aplication/<br/>
 │ │ └── navbar.php<br/>
 │ └── index.html<br/>
 │──htaccess<br/>
-└──index.html<br/><br/>
-
+└──index.html<br/>
 assets/<br/>
 ├── bootstrap/<br/>
 │ │ ├── css/<br/>
@@ -89,8 +88,7 @@ assets/<br/>
 │ │ │ ├── bootstrap.bundle.min.js<br/>
 │ │ │ └── bootstrap.min.js<br/>
 ├── img/<br/>
-└── img-diabetes-symptoms.jpg<br/><br/>
-
+└── img-diabetes-symptoms.jpg<br/>
 system/<br/>
 ├── core/<br/>
 ├── database/<br/>
