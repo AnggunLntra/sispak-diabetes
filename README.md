@@ -12,7 +12,7 @@ Terdapat 5 tahapan dalam metode ESDLC yaitu :
 
 ## Struktur Folder SIPAKAR
 
-Anda akan melihat sesuatu seperti ini:
+Anda akan melihat sesuatu seperti ini: <br/>
 aplication/
 ├── cache/
 │ └── index.html
