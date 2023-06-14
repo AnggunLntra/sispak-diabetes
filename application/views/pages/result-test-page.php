@@ -1,15 +1,15 @@
 <div class="container" style="margin-top: 8rem;">
     <div class="col-lg-12 min-vh-100">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-title text-white bg-success rounded-top p-lg-5 p-3 border-bottom">
-                        <h1 class="text-bold text-center">Hasil Diagnosa</h1>
+                        <h1 class="text-bold text-center mb-lg-5">Hasil Tes Diagnosis Diabetes</h1>
                         <p class="small text-end m-0">Tanggal : 12/04/2023</p>
                     </div>
                     <div class="card-body">
                         <div class="subtitle border-bottom">
-                            <h6 class="fw-bold text-center">Biodata Pasien</h6>
+                            <h6 class="fw-bold text-center mb-4">Biodata Diri</h6>
                             <table class="table table-borderless">
                                 <tbody>
                                     <tr>
@@ -54,8 +54,6 @@
                         <p class="text-uppercase text-danger text-end small fw-bold m-0">sipakar</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 bg-light">
             </div>
         </div>
     </div>
