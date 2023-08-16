@@ -9,8 +9,8 @@ class Manage_Symptoms extends CI_Controller
         $this->load->model('m_sispak');
 
         $config['base_url'] = site_url('Admin/Pages/Manage_Symptoms/index');
-        $config['total_rows'] = $this->m_sispak->countAllGejala();
-        $config['per_page'] = 5;
+        $config['total_rows'] = $this->m_sispak->countGejala();
+        $config['per_page'] = 8;
 
         $config['uri_segment'] = 3;
         $choice = $config['total_rows'] / $config['per_page'];
@@ -23,7 +23,7 @@ class Manage_Symptoms extends CI_Controller
         $config['full_tag_close'] = '</ul></nav></div">';
         $config['num_tag_open'] = '<li class = "page-item"><span class = "page-link">';
         $config['num_tagl_close'] = '</span></li>';
-        $config['cur_tag_open'] = '<li class = "page-item active"><span class = "page-link bg-danger">';
+        $config['cur_tag_open'] = '<li class = "page-item active"><span class = "page-link">';
         $config['cur_tagl_close'] = '</span></li>';
         $config['next_tag_open'] = '<li class = "page-item"><span class = "page-link">';
         $config['next_tagl_close'] = '<span aria-hidden="true">&raquo</span></span></li>';
