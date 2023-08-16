@@ -39,12 +39,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 card border-0">
-            <div class="card-title text-center">
-            </div>
-            <div class="card-body">
-
-            </div>
+        <div class="rounded-5 p-0" style="width: 264px; height: 400px; background-size:cover; background-position:center ;background-image:url(<?php echo base_url() ?>assets/img/IMG-20230616-WA0034.jpg);">
         </div>
     </div>
+</div>
 </div>

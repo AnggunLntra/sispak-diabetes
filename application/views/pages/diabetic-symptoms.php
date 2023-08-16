@@ -11,6 +11,7 @@
         <div class="col-6 col-lg-3 mb-3">
             <div class="card bg-danger py-3 shadow">
                 <div class="card-body text-center">
+                    <i class="fas fa-home fs-5 text-warning"></i>
                     <span class="fs-6 fw-bold text-light">Gejala</span>
                 </div>
             </div>
