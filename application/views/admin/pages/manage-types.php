@@ -16,26 +16,28 @@
             </nav>
 
             <div class="row">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id Jenis</th>
-                            <th scope="col">Jenis Diabetes</th>
-                            <th scope="col">Deskripsi</th>
-                            <th scope="col">Solusi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($jenis_diabetes as $jns) : ?>
+                <div class="col">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td><?php echo $jns['id_jenis']; ?></td>
-                                <td><?php echo $jns['jenis_dm']; ?></td>
-                                <td><?php echo $jns['deskripsi']; ?></td>
-                                <td><?php echo $jns['solusi']; ?></td>
+                                <th scope="col">Id Jenis</th>
+                                <th scope="col">Jenis Diabetes</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Solusi</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($jenis_diabetes as $jns) : ?>
+                                <tr>
+                                    <td><?php echo $jns['id_jenis']; ?></td>
+                                    <td><?php echo $jns['jenis_dm']; ?></td>
+                                    <td><?php echo $jns['deskripsi']; ?></td>
+                                    <td><?php echo $jns['solusi']; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         </div>

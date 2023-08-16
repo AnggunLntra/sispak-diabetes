@@ -16,29 +16,31 @@
             </nav>
 
             <div class="row">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col">Id Gejala</th>
-                            <th scope="col">Gejala Diabetes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $no = 1;
-                        foreach ($gejala as $gjl) : ?>
+                <div class="col">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td><?php echo $no++ ?></td>
-                                <td><?php echo $gjl['id_gejala']; ?></td>
-                                <td><?php echo $gjl['gejala']; ?></td>
+                                <th scope="col">No.</th>
+                                <th scope="col">Id Gejala</th>
+                                <th scope="col">Gejala Diabetes</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-                <div class="row">
-                    <div class="col">
-                        <?php echo $this->pagination->create_links(); ?>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $no = 1;
+                            foreach ($gejala as $gjl) : ?>
+                                <tr>
+                                    <td><?php echo $no++ ?></td>
+                                    <td><?php echo $gjl['id_gejala']; ?></td>
+                                    <td><?php echo $gjl['gejala']; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col">
+                            <?php echo $this->pagination->create_links(); ?>
+                        </div>
                     </div>
                 </div>
             </div>

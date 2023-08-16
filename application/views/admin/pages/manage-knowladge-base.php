@@ -16,34 +16,36 @@
             </nav>
 
             <div class="row">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id Pengetahuan</th>
-                            <th scope="col">Id Jenis</th>
-                            <th scope="col">Id Gejala</th>
-                            <th scope="col">Nilai Fuzzy</th>
-                            <th scope="col">Solusi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sit</td>
-                            <td>Fugiat</td>
-                            <td>Amet</td>
-                        </tr>
-                        <tr>
-                            <td>Adipisicing</td>
-                            <td>Fugiat</td>
-                            <td>Elit</td>
-                        </tr>
-                        <tr>
-                            <td>Hic</td>
-                            <td>Fugiat</td>
-                            <td>Fugiat</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id Pengetahuan</th>
+                                <th scope="col">Id Jenis</th>
+                                <th scope="col">Id Gejala</th>
+                                <th scope="col">Nilai Fuzzy</th>
+                                <th scope="col">Solusi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sit</td>
+                                <td>Fugiat</td>
+                                <td>Amet</td>
+                            </tr>
+                            <tr>
+                                <td>Adipisicing</td>
+                                <td>Fugiat</td>
+                                <td>Elit</td>
+                            </tr>
+                            <tr>
+                                <td>Hic</td>
+                                <td>Fugiat</td>
+                                <td>Fugiat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         </div>

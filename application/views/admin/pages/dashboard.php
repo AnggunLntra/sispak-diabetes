@@ -15,35 +15,34 @@
                 </div>
             </nav>
 
-            <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="row row-cols-1 row-cols-md-2 g-3">
                 <div class="col">
                     <div class="card text-center">
-                        <div class="card-header bg-danger text-light">Jumlah Jenis Diabetes</div>
+                        <div class="card-header bg-danger text-light fw-bolder">Jumlah Jenis Diabetes</div>
                         <div class="card-body">
-                            <span class="fs-1 fw-bold text-danger"><?php echo $jenis_diabetes; ?></span>
-                            <p class="card-text">Data</p>
+                            <span class="fs-1 fw-bold text-warning"><?php echo $jenis_diabetes; ?></span>
+                            <p class="card-text text-danger fw-bolder">Data</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card text-center">
-                        <div class="card-header bg-danger text-light">Jumlah Gejala Diabetes</div>
+                        <div class="card-header bg-danger text-light fw-bolder">Jumlah Gejala Diabetes</div>
                         <div class="card-body">
-                            <span class="fs-1 fw-bold text-danger"><?php echo $gejala; ?></span>
-                            <p class="card-text">Data</p>
+                            <span class="fs-1 fw-bold text-warning"><?php echo $gejala; ?></span>
+                            <p class="card-text text-danger fw-bolder">Data</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card text-center">
-                        <div class="card-header bg-danger text-light">Jumlah Basis Pengetahuan</div>
+                        <div class="card-header bg-danger text-light fw-bolder">Jumlah Basis Pengetahuan</div>
                         <div class="card-body">
-                            <span class="fs-1 fw-bold text-danger"><?php echo $basis_pengetahuan; ?></span>
-                            <p class="card-text">Data</p>
+                            <span class="fs-1 fw-bold text-warning"><?php echo $basis_pengetahuan; ?></span>
+                            <p class="card-text text-danger fw-bolder">Data</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         </div>
