@@ -36,11 +36,11 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col">
-                        <?= $this->pagination->create_links(); ?>
+                        <?php echo $this->pagination->create_links(); ?>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         </div>
