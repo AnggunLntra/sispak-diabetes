@@ -20,7 +20,7 @@
                     <div class="card text-center">
                         <div class="card-header bg-danger text-light">Jumlah Jenis Diabetes</div>
                         <div class="card-body">
-                            <span class="fs-1 fw-bold text-danger">34</span>
+                            <span class="fs-1 fw-bold text-danger"><?php echo $jenis_diabetes; ?></span>
                             <p class="card-text">Data</p>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="card text-center">
                         <div class="card-header bg-danger text-light">Jumlah Gejala Diabetes</div>
                         <div class="card-body">
-                            <span class="fs-1 fw-bold text-danger">34</span>
+                            <span class="fs-1 fw-bold text-danger"><?php echo $gejala; ?></span>
                             <p class="card-text">Data</p>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                     <div class="card text-center">
                         <div class="card-header bg-danger text-light">Jumlah Basis Pengetahuan</div>
                         <div class="card-body">
-                            <span class="fs-1 fw-bold text-danger">34</span>
+                            <span class="fs-1 fw-bold text-danger"><?php echo $basis_pengetahuan; ?></span>
                             <p class="card-text">Data</p>
                         </div>
                     </div>

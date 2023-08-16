@@ -21,9 +21,13 @@ class Dashboard extends CI_Controller
      */
     public function index()
     {
+        $this->load->model('m_sispak');
+        $data['gejala'] = $this->m_sispak->getNumRowsGejala();
+        $data['jenis_diabetes'] = $this->m_sispak->getNumRowsJenis();
+        $data['basis_pengetahuan'] = $this->m_sispak->getNumRowsPengetahuan();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/dashboard');
+        $this->load->view('admin/pages/dashboard', $data);
         $this->load->view('admin/templates/footer');
     }
 }
