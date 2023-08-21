@@ -48,7 +48,7 @@
                                     <td class="text-center">
                                         <ul class="list-unstyled m-0">
                                             <li class="list-inline-item m-1">
-                                                <a href="#" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
+                                                <a href="<?php echo base_url('Admin/Pages/Update_Types') ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
                                             </li>
                                             <li class="list-inline-item m-1">
                                                 <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>

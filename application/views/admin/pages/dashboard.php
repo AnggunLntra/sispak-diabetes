@@ -16,7 +16,7 @@
             </nav>
 
             <div class="row">
-                <p class="fst-italic fs-5">Selamat Datang di Halaman Admin <span class="fw-bold">SI<span class="text-warning">PAKAR</span></span></p>
+                <p class="fst-italic fs-5">Selamat Datang di Halaman Dashboard Admin <span class="fw-bold">SI<span class="text-warning">PAKAR</span></span></p>
             </div>
 
             <hr>
