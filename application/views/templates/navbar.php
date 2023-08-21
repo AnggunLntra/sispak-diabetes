@@ -14,10 +14,10 @@
                         <a class="nav-link text-light" href="<?php echo base_url('Pages/Test_Page') ?>">Tes Diagnosis Diabetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="<?php echo base_url('Pages/Diabetic_Symptoms') ?>">Gejala</a>
+                        <a class="nav-link text-light" href="<?php echo base_url('Pages/Diabetic_Types') ?>">Jenis Diabetes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="<?php echo base_url('Pages/Diabetic_Types') ?>">Tipe Diabetes</a>
+                        <a class="nav-link text-light" href="<?php echo base_url('Pages/Diabetic_Symptoms') ?>">Gejala Diabetes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="<?php echo base_url('Pages/User_Guide') ?>">Cara Penggunaan</a>
@@ -35,10 +35,9 @@
                         </ul>
                     </li> -->
                 </ul>
-                <!-- <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Cari" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Cari</button>
-                </form> -->
+                <div class="d-flex">
+                    <a href="#" class="btn btn-md border"><span class="text-white">Masuk</span></a>
+                </div>
             </div>
         </div>
     </nav>

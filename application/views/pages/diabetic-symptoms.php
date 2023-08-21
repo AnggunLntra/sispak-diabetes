@@ -1,60 +1,18 @@
 <div class="container min-vh-100" style="margin-top: 8rem;">
-    <h1 class="fw-bold text-center my-5">Gejala-Gejala Diabetes</h1>
-    <div class="row">
-        <div class="col-6 col-lg-3 mb-3">
-            <div class="card bg-secondary py-3 shadow">
-                <div class="card-body text-center">
-                    <span class="fs-6 fw-bold text-light">Gejala</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mb-3">
-            <div class="card bg-danger py-3 shadow">
-                <div class="card-body text-center">
-                    <i class="fas fa-home fs-5 text-warning"></i>
-                    <span class="fs-6 fw-bold text-light">Gejala</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mb-3">
-            <div class="card bg-light py-3 shadow">
-                <div class="card-body text-center">
-                    <span class="fs-6 fw-bold">Gejala</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mb-3">
-            <div class="card bg-dark py-3 shadow">
-                <div class="card-body text-center">
-                    <span class="fs-6 fw-bold text-light">Gejala</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mb-3">
-            <div class="card bg-dark py-3 shadow">
-                <div class="card-body text-center">
-                    <span class="fs-6 fw-bold text-light">Gejala</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mb-3">
-            <div class="card bg-light py-3 shadow">
-                <div class="card-body text-center">
-                    <span class="fs-6 fw-bold">Gejala</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mb-3">
-            <div class="card bg-danger py-3 shadow">
-                <div class="card-body text-center">
-                    <span class="fs-6 fw-bold text-light">Gejala</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3 mb-3">
-            <div class="card bg-secondary py-3 shadow">
-                <div class="card-body text-center">
-                    <span class="fs-6 fw-bold text-light">Gejala</span>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card border-0">
+                <h1 class="fw-bold text-center mb-3 text-danger">Gejala-Gejala Diabetes</h1>
+                <div class="card-body">
+                    <p class="card-text">Berdasarkan hasil wawancara dengan pakar, terdapat sebanyak 19 gejala yang biasa dialami oleh penderita penyakit diabetes. Berikut 19 gejala yang biasa dialami oleh penderita diabetes :
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <?php
+                        $no = 1;
+                        foreach ($gejala as $gjl) : ?>
+                            <li class="list-group-item"><?php echo $no++ ?>. <?php echo $gjl['gejala'] ?></li>
+                        <?php endforeach ?>
+                    </ul>
                 </div>
             </div>
         </div>

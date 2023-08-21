@@ -1,35 +1,23 @@
 <div class="container min-vh-100" style="margin-top: 8rem;">
-    <h1 class="fw-bold text-center my-5">Tipe-Tipe Diabetes</h1>
+    <h1 class="fw-bold text-center my-5">Jenis Diabetes</h1>
     <div class="row">
-        <div class="col-lg-4 col-6 mb-3 mb-lg-0">
-            <div class="card bg-light-subtle border-danger shadow">
-                <div class="card-title text-center pt-3">
-                    <span class="fs-4 fw-semibold">Diabetes Tipe 1</span>
-                </div>
-                <div class="card-body">
-                    <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit similique, error expedita maiores molestias quia rem magni corrupti libero sequi cum laudantium voluptates nostrum quaerat veritatis culpa consequatur voluptate?</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-6 mb-3 mb-lg-0">
-            <div class="card bg-light-subtle border-danger shadow">
-                <div class="card-title text-center pt-3">
-                    <span class="fs-4 fw-semibold">Diabetes Tipe 2</span>
-                </div>
-                <div class="card-body">
-                    <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit similique, error expedita maiores molestias quia rem magni corrupti libero sequi cum laudantium voluptates nostrum quaerat veritatis culpa consequatur voluptate?</p>
+        <?php
+        $no = 1;
+        foreach ($jenis_diabetes as $jns) : ?>
+            <div class="col-lg-4 mb-3 mb-lg-0">
+                <div class="card h-100 bg-light-subtle border-danger shadow">
+                    <div class="card-body">
+                        <div class="card-title text-center py-3">
+                            <span class="fs-4 fw-semibold"><?php echo $jns['jenis_dm'] ?></span>
+                        </div>
+                        <p class="fw-bold">Deskripsi :</p>
+                        <p class="fst-italic"><?php echo $jns['deskripsi'] ?></p>
+                        <p class="fw-bold">Solusi :</p>
+                        <p class="fst-italic"><?php echo $jns['deskripsi'] ?></p>
+                        <!-- <p class="fst-italic"><?php echo $jns['solusi'] ?></p> -->
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-6 mb-3 mb-lg-0">
-            <div class="card bg-light-subtle border-danger shadow">
-                <div class="card-title text-center pt-3">
-                    <span class="fs-4 fw-semibold">Diabetes Gestasional</span>
-                </div>
-                <div class="card-body">
-                    <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, sit similique, error expedita maiores molestias quia rem magni corrupti libero sequi cum laudantium voluptates nostrum quaerat veritatis culpa consequatur voluptate?</p>
-                </div>
-            </div>
-        </div>
+        <?php endforeach ?>
     </div>
 </div>
