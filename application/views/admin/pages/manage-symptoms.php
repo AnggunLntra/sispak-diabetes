@@ -15,14 +15,21 @@
                 </div>
             </nav>
 
+            <div class="row mb-3">
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-warning"><i class="fa fa-plus text-white"><span class="text-white pl-2">Tambah Data</span></i></a>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col">
-                    <table class="table">
-                        <thead>
+                    <table class="table table-hover">
+                        <thead class="thead-light">
                             <tr>
-                                <th scope="col">No.</th>
+                                <th class="text-center" scope="col">No.</th>
                                 <th scope="col">Id Gejala</th>
                                 <th scope="col">Gejala Diabetes</th>
+                                <th class="text-center" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,9 +37,19 @@
                             $no = 1;
                             foreach ($gejala as $gjl) : ?>
                                 <tr>
-                                    <td><?php echo $no++ ?></td>
+                                    <td class="text-center"><?php echo $no++ ?></td>
                                     <td><?php echo $gjl['id_gejala']; ?></td>
                                     <td><?php echo $gjl['gejala']; ?></td>
+                                    <td class="text-center">
+                                        <ul class="list-unstyled m-0">
+                                            <li class="list-inline-item m-1">
+                                                <a href="#" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
+                                            </li>
+                                            <li class="list-inline-item m-1">
+                                                <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-edit"></i></a>
+                                            </li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

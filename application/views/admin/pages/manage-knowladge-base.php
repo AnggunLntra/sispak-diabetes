@@ -15,6 +15,12 @@
                 </div>
             </nav>
 
+            <div class="row mb-3">
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-warning"><i class="fa fa-plus text-white"><span class="text-white pl-2">Tambah Data</span></i></a>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col">
                     <table class="table">
@@ -25,23 +31,26 @@
                                 <th scope="col">Id Gejala</th>
                                 <th scope="col">Nilai Fuzzy</th>
                                 <th scope="col">Solusi</th>
+                                <th class="text-center" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Sit</td>
-                                <td>Fugiat</td>
-                                <td>Amet</td>
-                            </tr>
-                            <tr>
-                                <td>Adipisicing</td>
-                                <td>Fugiat</td>
-                                <td>Elit</td>
-                            </tr>
-                            <tr>
-                                <td>Hic</td>
-                                <td>Fugiat</td>
-                                <td>Fugiat</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center">
+                                    <ul class="list-unstyled m-0">
+                                        <li class="list-inline-item m-1">
+                                            <a href="#" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
+                                        </li>
+                                        <li class="list-inline-item m-1">
+                                            <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-edit"></i></a>
+                                        </li>
+                                    </ul>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

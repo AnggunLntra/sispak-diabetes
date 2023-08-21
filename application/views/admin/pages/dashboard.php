@@ -15,8 +15,14 @@
                 </div>
             </nav>
 
+            <div class="row">
+                <p class="fst-italic fs-5">Selamat Datang di Halaman Admin <span class="fw-bold">SI<span class="text-warning">PAKAR</span></span></p>
+            </div>
+
+            <hr>
+
             <div class="row row-cols-1 row-cols-md-2 g-3">
-                <div class="col">
+                <div class="col-md-4 col-sm-6">
                     <div class="card text-center">
                         <div class="card-header bg-danger text-light fw-bolder">Jumlah Jenis Diabetes</div>
                         <div class="card-body">
@@ -25,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-4 col-sm-6">
                     <div class="card text-center">
                         <div class="card-header bg-danger text-light fw-bolder">Jumlah Gejala Diabetes</div>
                         <div class="card-body">
@@ -34,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-4 col-sm-6">
                     <div class="card text-center">
                         <div class="card-header bg-danger text-light fw-bolder">Jumlah Basis Pengetahuan</div>
                         <div class="card-body">
