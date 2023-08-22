@@ -5,21 +5,33 @@
                 <div class="header fs-3 fw-bold text-center mb-3">
                     SI<span class="text-warning">PAKAR</span>
                 </div>
-                <ul class="list-unstyled components mb-5">
-                    <li>
-                        <a href="<?php echo base_url() . 'Admin/Pages/Dashboard' ?>"><i class="fa fa-home me-3"></i>Dashboard</a>
+                <ul class="navbar-nav list-unstyled components mb-5">
+                    <li class="<?php if ($this->uri->uri_string() == 'Admin/Pages/Dashboard') {
+                                    echo 'active';
+                                }
+                                ?>">
+                        <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Dashboard' ?>"><i class="fa fa-home me-3"></i>Dashboard</a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url() . 'Admin/Pages/Manage_Types' ?>"><i class="fa fa-folder me-3"></i>Jenis Diabetes</a>
+                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Types') || ($this->uri->uri_string() == 'Admin/Pages/Create_Types') || ($this->uri->uri_string() == 'Admin/Pages/Update_Types') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Types')) {
+                                    echo 'active';
+                                }
+                                ?>"">
+                        <a class=" nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Types' ?>"><i class="fa fa-folder me-3"></i>Jenis Diabetes</a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url() . 'Admin/Pages/Manage_Symptoms' ?>"><i class="fa fa-folder-o me-3"></i>Gejala Diabetes</a>
+                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms') || ($this->uri->uri_string() == 'Admin/Pages/Create_Symptoms') || ($this->uri->uri_string() == 'Admin/Pages/Update_Symptoms') || ($this->uri->uri_string(5))) {
+                                    echo 'active';
+                                }
+                                ?>">
+                        <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Symptoms' ?>"><i class="fa fa-folder-o me-3"></i>Gejala Diabetes</a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url() . 'Admin/Pages/Manage_Knowladge_Base' ?>"><i class="fa fa-book me-3"></i>Basis Pengetahuan</a>
+                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Create_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Update_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Types')) {
+                                    echo 'active';
+                                }
+                                ?>">
+                        <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Knowladge_Base' ?>"><i class="fa fa-book me-3"></i>Basis Pengetahuan</a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url() ?>"><i class="fa fa-sign-out me-3"></i>Keluar</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url() ?>"><i class="fa fa-sign-out me-3"></i>Keluar</a>
                     </li>
                 </ul>
 

@@ -10,9 +10,9 @@ class Manage_Symptoms extends CI_Controller
 
         $config['base_url'] = site_url('Admin/Pages/Manage_Symptoms/index');
         $config['total_rows'] = $this->m_sispak->countGejala();
-        $config['per_page'] = 8;
+        $config['per_page'] = 5;
 
-        $config['uri_segment'] = 3;
+        $config['uri_segment'] = 5;
         $choice = $config['total_rows'] / $config['per_page'];
         $config['num_links'] = floor($choice);
         $config['first_link'] = 'First';
@@ -34,7 +34,7 @@ class Manage_Symptoms extends CI_Controller
         $config['last_tag_open'] = '<li class = "page-item"><span class = "page-link">';
         $config['last_tagl_close'] = '</span></li>';
 
-        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['page'] = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
         $data['gejala'] = $this->m_sispak->getGejala($config['per_page'], $data['page']);
 
         $this->pagination->initialize($config);
