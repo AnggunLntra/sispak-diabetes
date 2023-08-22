@@ -74,8 +74,6 @@ class Manage_Symptoms extends CI_Controller
 
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             Data Gejala Diabetes Berhasil Ditambahkan!.
-            <button type="buton" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
             </div>');
             redirect('Admin/Pages/Manage_Symptoms');
         }
@@ -113,9 +111,6 @@ class Manage_Symptoms extends CI_Controller
             $this->m_sispak->Update('gejala', $data, $where);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             Data Gejala Diabetes Berhasil Diupdate!.
-            <button type="buton" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
             </div>');
             redirect('Admin/Pages/Manage_Symptoms');
         }
@@ -127,9 +122,7 @@ class Manage_Symptoms extends CI_Controller
 
         $this->m_sispak->Delete('gejala', $where);
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        Data Gejala Diabetes Berhasil Hapus!.
-        <button type="buton" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
+        Data Gejala Diabetes Berhasil Dihapus!.
         </button>
         </div>');
         redirect('Admin/Pages/Manage_Symptoms');
