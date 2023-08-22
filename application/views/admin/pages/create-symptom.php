@@ -10,7 +10,7 @@
                     </button>
 
                     <div>
-                        <h4>Tambah Data Gejala Diabetes</h4>
+                        <h4>Tambah Gejala Diabetes</h4>
                     </div>
                 </div>
             </nav>
@@ -18,7 +18,7 @@
             <div class="row justify-content-center">
                 <div class="col">
                     <div class="mb-5">
-                        <h4 class="text-center">Form Tambah Data</h4>
+                        <h4 class="text-center">Form Tambah Gejala Diabetes</h4>
                     </div>
                     <form method="POST" action="<?php echo base_url('Admin/Pages/Manage_Symptoms/Create_Symptoms_Action') ?>">
                         <div class="form-group row">

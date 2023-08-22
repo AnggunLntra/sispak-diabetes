@@ -10,7 +10,7 @@
                     </button>
 
                     <div>
-                        <h4>Tambah Data Tipe Diabetes</h4>
+                        <h4>Tambah Tipe Diabetes</h4>
                     </div>
                 </div>
             </nav>
@@ -18,7 +18,7 @@
             <div class="row justify-content-center">
                 <div class="col">
                     <div class="mb-5">
-                        <h4 class="text-center">Form Tambah Data</h4>
+                        <h4 class="text-center">Form Tambah Jenis Diabetes</h4>
                     </div>
                     <form>
                         <div class="form-row">
