@@ -52,11 +52,92 @@ class Manage_Symptoms extends CI_Controller
         $this->load->view('admin/templates/footer');
     }
 
-    public function Update_Symptoms()
+    public function Create_Symptoms_Action()
     {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+        $this->_rules();
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->Create_Symptoms();
+        } else {
+            $id_gejala               = $this->input->post('id_gejala');
+            $gejala                  = $this->input->post('gejala');
+
+            $data = array(
+                'id_gejala'          => $id_gejala,
+                'gejala'             => $gejala,
+            );
+
+            $this->m_sispak->Create($data, 'gejala');
+
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data Gejala Diabetes Berhasil Ditambahkan!.
+            <button type="buton" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </div>');
+            redirect('Admin/Pages/Manage_Symptoms');
+        }
+    }
+
+    public function Update_Symptoms($id)
+    {
+        $where = array('id_gejala' => $id);
+        $data['gejala'] = $this->m_sispak->getData('gejala', $where)->result();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/update-symptom');
+        $this->load->view('admin/pages/update-symptom', $data);
         $this->load->view('admin/templates/footer');
+    }
+
+    public function Update_Symptoms_Action($id)
+    {
+        $this->_rules();
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->Update_Symptoms($id);
+        } else {
+            $id_gejala              = $this->input->post('id_gejala');
+            $gejala           = $this->input->post('gejala');
+
+            $data = array(
+                'id_gejala'                  => $id_gejala,
+                'gejala'                 => $gejala,
+            );
+
+            $where = array(
+                'id_gejala' => $id
+            );
+
+            $this->m_sispak->Update('gejala', $data, $where);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data Gejala Diabetes Berhasil Diupdate!.
+            <button type="buton" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>');
+            redirect('Admin/Pages/Manage_Symptoms');
+        }
+    }
+
+    public function Delete_Symptoms($id)
+    {
+        $where = array('id_gejala' => $id);
+
+        $this->m_sispak->Delete('gejala', $where);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Data Gejala Diabetes Berhasil Hapus!.
+        <button type="buton" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');
+        redirect('Admin/Pages/Manage_Symptoms');
+    }
+
+    public function _rules()
+    {
+        $this->form_validation->set_rules('id_gejala', 'id_gejala', 'required');
+        $this->form_validation->set_rules('gejala', 'gejala', 'required');
     }
 }

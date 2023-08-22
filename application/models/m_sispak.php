@@ -35,4 +35,24 @@ class M_Sispak extends CI_Model
         $query = $this->db->query('SELECT * FROM basis_pengetahuan');
         return $query->num_rows();
     }
+
+    public function getData($table, $where, $limit = NULL)
+    {
+        return $this->db->get_where($table, $where, $limit);
+    }
+
+    public function Create($data, $table)
+    {
+        $this->db->insert($table, $data);
+    }
+
+    public function Update($table, $data, $where)
+    {
+        $this->db->update($table, $data, $where);
+    }
+
+    public function Delete($table, $where)
+    {
+        $this->db->delete($table, $where);
+    }
 }

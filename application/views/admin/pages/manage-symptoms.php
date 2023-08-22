@@ -23,6 +23,12 @@
 
             <div class="row">
                 <div class="col">
+                    <?php echo $this->session->flashdata('pesan') ?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
                     <table class="table table-hover">
                         <thead class="thead-light">
                             <tr>
@@ -42,10 +48,10 @@
                                     <td class="text-center">
                                         <ul class="list-unstyled m-0">
                                             <li class="list-inline-item m-1">
-                                                <a href="<?php echo base_url('Admin/Pages/Manage_Symptoms/Update_Symptoms') ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
+                                                <a href="<?php echo base_url('Admin/Pages/Manage_Symptoms/Update_Symptoms/') . $gjl['id_gejala'] ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
                                             </li>
-                                            <li class="list-inline-item m-1">
-                                                <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                            <li class="list-inline-item m-1" onclick="javascript: return confirm('Hapus Data?')">
+                                                <a href="<?php echo base_url('Admin/Pages/Manage_Symptoms/Delete_Symptoms/') . $gjl['id_gejala'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
                                             </li>
                                         </ul>
                                     </td>
@@ -60,5 +66,3 @@
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
