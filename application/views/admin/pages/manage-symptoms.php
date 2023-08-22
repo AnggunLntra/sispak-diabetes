@@ -27,7 +27,7 @@
                         <thead class="thead-light">
                             <tr>
                                 <th class="text-center" scope="col">No.</th>
-                                <th scope="col">Id Gejala</th>
+                                <th class="text-center" scope="col">Id Gejala</th>
                                 <th scope="col">Gejala Diabetes</th>
                                 <th class="text-center" scope="col">Aksi</th>
                             </tr>
@@ -37,7 +37,7 @@
                             foreach ($gejala as $gjl) : ?>
                                 <tr>
                                     <td class="text-center"><?php echo ++$page ?></td>
-                                    <td><?php echo $gjl['id_gejala']; ?></td>
+                                    <td class="text-center"><?php echo $gjl['id_gejala']; ?></td>
                                     <td><?php echo $gjl['gejala']; ?></td>
                                     <td class="text-center">
                                         <ul class="list-unstyled m-0">
