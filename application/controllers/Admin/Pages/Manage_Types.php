@@ -28,4 +28,20 @@ class Manage_Types extends CI_Controller
         $this->load->view('admin/pages/manage-types', $data);
         $this->load->view('admin/templates/footer');
     }
+
+    public function Create_Types()
+    {
+        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/pages/create-type');
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function Update_Types()
+    {
+        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/pages/update-type');
+        $this->load->view('admin/templates/footer');
+    }
 }

@@ -43,4 +43,20 @@ class Manage_Symptoms extends CI_Controller
         $this->load->view('admin/pages/manage-symptoms', $data);
         $this->load->view('admin/templates/footer');
     }
+
+    public function Create_Symptoms()
+    {
+        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/pages/create-symptom');
+        $this->load->view('admin/templates/footer');
+    }
+
+    public function Update_Symptoms()
+    {
+        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/pages/update-symptom');
+        $this->load->view('admin/templates/footer');
+    }
 }

@@ -12,19 +12,19 @@
                                 ?>">
                         <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Dashboard' ?>"><i class="fa fa-home me-3"></i>Dashboard</a>
                     </li>
-                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Types') || ($this->uri->uri_string() == 'Admin/Pages/Create_Types') || ($this->uri->uri_string() == 'Admin/Pages/Update_Types')) {
+                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Types') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Types/Create_Types') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Types/Update_Types')) {
                                     echo 'active';
                                 }
                                 ?>"">
                         <a class=" nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Types' ?>"><i class="fa fa-folder me-3"></i>Jenis Diabetes</a>
                     </li>
-                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms') || ($this->uri->uri_string() == 'Admin/Pages/Create_Symptoms') || ($this->uri->uri_string() == 'Admin/Pages/Update_Symptoms') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/index') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/index/5') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/index/10') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/index/15')) {
+                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/Create_Symptoms') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/Update_Symptoms') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/index') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/index/5') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/index/10') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Symptoms/index/15')) {
                                     echo 'active';
                                 }
                                 ?>">
                         <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Symptoms' ?>"><i class="fa fa-folder-o me-3"></i>Gejala Diabetes</a>
                     </li>
-                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Create_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Update_Knowladge_Base')) {
+                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Knowladge_Base/Create_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Knowladge_Base/Update_Knowladge_Base')) {
                                     echo 'active';
                                 }
                                 ?>">
