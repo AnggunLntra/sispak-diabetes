@@ -30,3 +30,11 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+## Page
+Create_Knowladge_Base.php
+Create_Types.php
+Create_Symptoms.php
+Update_Knowladge_Base.php
+Update_Types.php
+Update_Symptoms.php
