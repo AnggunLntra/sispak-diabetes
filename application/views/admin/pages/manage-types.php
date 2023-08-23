@@ -23,6 +23,12 @@
 
             <div class="row">
                 <div class="col">
+                    <?php echo $this->session->flashdata('pesan') ?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
                     <table class="table table-responsive table-hover border">
                         <thead class="thead-light">
                             <tr>
@@ -43,15 +49,14 @@
                                     <td><?php echo $jns['id_jenis']; ?></td>
                                     <td><?php echo $jns['jenis_dm']; ?></td>
                                     <td><?php echo $jns['deskripsi']; ?></td>
-                                    <td><?php echo $jns['deskripsi']; ?></td>
-                                    <!-- <td><?php echo $jns['solusi']; ?></td> -->
+                                    <td><?php echo $jns['solusi']; ?></td>
                                     <td class="text-center">
                                         <ul class="list-unstyled m-0">
                                             <li class="list-inline-item m-1">
-                                                <a href="<?php echo base_url('Admin/Pages/Manage_Types/Update_Types') ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
+                                                <a href="<?php echo base_url('Admin/Pages/Manage_Types/Update_Types/') . $jns['id_jenis'] ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
                                             </li>
-                                            <li class="list-inline-item m-1">
-                                                <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                            <li class="list-inline-item m-1" onclick="javascript:return confirm('Hapus Data?')">
+                                                <a href="<?php echo base_url('Admin/Pages/Manage_Types/Delete_Types/') . $jns['id_jenis'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
                                             </li>
                                         </ul>
                                     </td>
