@@ -32,9 +32,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/results/
 
 ## Page
-Create_Knowladge_Base.php
-Create_Types.php
-Create_Symptoms.php
-Update_Knowladge_Base.php
-Update_Types.php
-Update_Symptoms.php
+application/controllers/Admin/Pages/Create_Knowladge_Base.php
+application/controllers/Admin/Pages/Create_Types.php
+application/controllers/Admin/Pages/Create_Symptoms.php
+application/controllers/Admin/Pages/Update_Knowladge_Base.php
+application/controllers/Admin/Pages/Update_Types.php
+application/controllers/Admin/Pages/Update_Symptoms.php
