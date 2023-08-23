@@ -13,9 +13,19 @@ class M_Sispak extends CI_Model
         return $this->db->get('gejala', $limit, $start)->result_array();
     }
 
-    public function get_jenis()
+    public function getGejalaDM()
+    {
+        return $this->db->get('gejala')->result_array();
+    }
+
+    public function getjenis()
     {
         return $this->db->get('jenis_diabetes')->result_array();
+    }
+
+    public function getKnowladge()
+    {
+        return $this->db->get('basis_pengetahuan')->result_array();
     }
 
     public function getNumRowsGejala()

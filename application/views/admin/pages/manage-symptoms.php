@@ -39,8 +39,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            foreach ($gejala as $gjl) : ?>
+                            <?php foreach ($gejala as $gjl) : ?>
                                 <tr>
                                     <td class="text-center"><?php echo ++$page ?></td>
                                     <td class="text-center"><?php echo $gjl['id_gejala']; ?></td>

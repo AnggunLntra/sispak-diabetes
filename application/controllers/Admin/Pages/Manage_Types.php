@@ -22,7 +22,7 @@ class Manage_Types extends CI_Controller
     public function index()
     {
         $this->load->model('M_Sispak');
-        $data['jenis_diabetes'] = $this->M_Sispak->get_jenis();
+        $data['jenis_diabetes'] = $this->M_Sispak->getjenis();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/manage-types', $data);
