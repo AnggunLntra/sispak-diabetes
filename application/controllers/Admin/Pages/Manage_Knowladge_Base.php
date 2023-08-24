@@ -113,10 +113,10 @@ class Manage_Knowladge_Base extends CI_Controller
 
     public function _rules()
     {
-        $this->form_validation->set_rules('id_pengetahuan', 'id_pengetahuan', 'required');
-        $this->form_validation->set_rules('id_jenis', 'id_jenis', 'required');
-        $this->form_validation->set_rules('id_gejala', 'id_gejala', 'required');
-        $this->form_validation->set_rules('nilai_fuzzy', 'nilai_fuzzy', 'required');
+        $this->form_validation->set_rules('id_pengetahuan', 'ID Pengetahuan', 'required');
+        $this->form_validation->set_rules('id_jenis', 'ID Jenis Diabetes Melitus', 'required');
+        $this->form_validation->set_rules('id_gejala', 'ID Gejala Diabetes Melitus', 'required');
+        $this->form_validation->set_rules('nilai_fuzzy', 'Nilai Fuzzy', 'required');
         // $this->form_validation->set_rules('solusi', 'solusi', 'required');
     }
 }

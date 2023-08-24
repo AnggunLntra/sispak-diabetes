@@ -22,7 +22,7 @@
                             <tr>
                                 <th class="text-center" scope="col">No.</th>
                                 <th class="text-center" scope="col">Id Gejala</th>
-                                <th scope="col">Gejala Diabetes</th>
+                                <th class="col-9" scope="col">Gejala Diabetes</th>
                                 <th class="text-center" scope="col">Aksi</th>
                             </tr>
                         </thead>

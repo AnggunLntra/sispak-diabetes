@@ -119,9 +119,9 @@ class Manage_Types extends CI_Controller
 
     public function _rules()
     {
-        $this->form_validation->set_rules('id_jenis', 'id_jenis', 'required');
-        $this->form_validation->set_rules('jenis_dm', 'jenis_dm', 'required');
-        $this->form_validation->set_rules('deskripsi', 'deskripsi', 'required');
-        $this->form_validation->set_rules('solusi', 'solusi', 'required');
+        $this->form_validation->set_rules('id_jenis', 'ID Jenis', 'required');
+        $this->form_validation->set_rules('jenis_dm', 'Jenis Diabetes Melitus', 'required');
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
+        $this->form_validation->set_rules('solusi', 'Solusi', 'required');
     }
 }

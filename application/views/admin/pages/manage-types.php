@@ -26,7 +26,7 @@
                                 <th scope="col">Jenis Diabetes</th>
                                 <th class="col-3" scope="col">Deskripsi</th>
                                 <th class="col-3" scope="col">Solusi</th>
-                                <th class="text-center">Aksi</th>
+                                <th class="col-2 text-center" class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

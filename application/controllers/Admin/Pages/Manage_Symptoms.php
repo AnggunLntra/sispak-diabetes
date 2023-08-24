@@ -129,9 +129,9 @@ class Manage_Symptoms extends CI_Controller
     {
         $this->form_validation->set_rules(
             'id_gejala',
-            'id_gejala',
+            'ID Gejala',
             'required'
         );
-        $this->form_validation->set_rules('gejala', 'gejala', 'required');
+        $this->form_validation->set_rules('gejala', 'Gejala', 'required');
     }
 }
