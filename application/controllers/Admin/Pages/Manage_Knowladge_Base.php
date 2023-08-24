@@ -18,6 +18,7 @@ class Manage_Knowladge_Base extends CI_Controller
     public function Create_Knowladge_Base()
     {
         $this->load->model('M_Sispak');
+        $data['halaman'] = 'Tambah Basis Pengetahuan';
         $data['jenis_diabetes'] = $this->m_sispak->getJenis();
         $data['gejala'] = $this->m_sispak->getGejalaDM();
         $this->load->view('admin/templates/header');
@@ -60,6 +61,7 @@ class Manage_Knowladge_Base extends CI_Controller
     public function Update_Knowladge_Base($id)
     {
         $where = array('id_pengetahuan' => $id);
+        $data['halaman'] = 'Ubah Basis Pengetahuan';
         $data['basis_pengetahuan'] = $this->m_sispak->getData('basis_pengetahuan', $where)->result();
         $data['jenis_diabetes'] = $this->m_sispak->getJenis();
         $data['gejala'] = $this->m_sispak->getGejalaDM();

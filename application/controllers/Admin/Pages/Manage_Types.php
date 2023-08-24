@@ -32,9 +32,10 @@ class Manage_Types extends CI_Controller
 
     public function Create_Types()
     {
+        $data['halaman'] = 'Tambah Tipe Diabetes';
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/create-type');
+        $this->load->view('admin/pages/create-type', $data);
         $this->load->view('admin/templates/footer');
     }
 
@@ -70,6 +71,7 @@ class Manage_Types extends CI_Controller
     public function Update_Types($id)
     {
         $where = array('id_jenis' => $id);
+        $data['halaman'] = 'Ubah Tipe Diabetes';
         $data['jenis_diabetes'] = $this->m_sispak->getData('jenis_diabetes', $where)->result();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');

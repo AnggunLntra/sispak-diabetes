@@ -52,9 +52,10 @@ class Manage_Symptoms extends CI_Controller
 
     public function Create_Symptoms()
     {
+        $data['halaman'] = 'Tambah Gejala Diabetes';
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/create-symptom');
+        $this->load->view('admin/pages/create-symptom', $data);
         $this->load->view('admin/templates/footer');
     }
 
@@ -83,6 +84,7 @@ class Manage_Symptoms extends CI_Controller
     public function Update_Symptoms($id)
     {
         $where = array('id_gejala' => $id);
+        $data['halaman'] = 'Ubah Gejala Diabetes';
         $data['gejala'] = $this->m_sispak->getData('gejala', $where)->result();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
@@ -118,7 +120,6 @@ class Manage_Symptoms extends CI_Controller
     public function Delete_Symptoms($id)
     {
         $where = array('id_gejala' => $id);
-
         $this->m_sispak->Delete('gejala', $where);
         $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
         redirect('Admin/Pages/Manage_Symptoms');
@@ -126,7 +127,11 @@ class Manage_Symptoms extends CI_Controller
 
     public function _rules()
     {
-        $this->form_validation->set_rules('id_gejala', 'id_gejala', 'required');
+        $this->form_validation->set_rules(
+            'id_gejala',
+            'id_gejala',
+            'required'
+        );
         $this->form_validation->set_rules('gejala', 'gejala', 'required');
     }
 }
