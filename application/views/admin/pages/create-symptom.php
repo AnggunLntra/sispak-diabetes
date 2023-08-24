@@ -12,13 +12,14 @@
                         <div class="form-group row">
                             <label for="id_gejala" class="col-sm-2 col-form-label">Id Gejala</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="id_gejala" name="id_gejala">
+                                <input type="text" class="form-control" id="id_gejala" name="id_gejala" value="<?php echo set_value('id_gejala'); ?>">
+                                <span class="small text-warning fst-italic"><?php echo form_error('id_gejala'); ?></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="gejala" class="col-sm-2 col-form-label">Gejala</label>
                             <div class="col-sm-10">
-                                <textarea name="gejala" id="gejala" class="form-control" cols="30" rows="5"></textarea>
+                                <input class="form-control" name="gejala" id="gejala" value="<?php echo set_value('gejala'); ?>"></input>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end">
