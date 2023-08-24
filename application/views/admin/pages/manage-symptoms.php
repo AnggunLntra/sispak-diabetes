@@ -23,7 +23,7 @@
 
             <div class="row">
                 <div class="col">
-                    <?php echo $this->session->flashdata('pesan') ?>
+                    <?php $this->view('admin/templates/message') ?>
                 </div>
             </div>
 

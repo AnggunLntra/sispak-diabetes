@@ -61,9 +61,7 @@ class Manage_Types extends CI_Controller
 
             $this->m_sispak->Create($data, 'jenis_diabetes');
 
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Jenis Diabetes Berhasil Ditambahkan!.
-            </div>');
+            $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
             redirect('Admin/Pages/Manage_Types');
         }
     }
@@ -102,9 +100,7 @@ class Manage_Types extends CI_Controller
             );
 
             $this->m_sispak->Update('jenis_diabetes', $data, $where);
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Jenis Diabetes Berhasil Diupdate!.
-            </div>');
+            $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
             redirect('Admin/Pages/Manage_Types');
         }
     }
@@ -114,10 +110,7 @@ class Manage_Types extends CI_Controller
         $where = array('id_jenis' => $id);
 
         $this->m_sispak->Delete('jenis_diabetes', $where);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        Data Jenis Diabetes Berhasil Dihapus!.
-        </button>
-        </div>');
+        $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
         redirect('Admin/Pages/Manage_Types');
     }
 

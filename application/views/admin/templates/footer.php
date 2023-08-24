@@ -2,6 +2,17 @@
                 <script src="<?php echo base_url() ?>assets/bootstrap/js/popper.js"></script>
                 <script src="<?php echo base_url() ?>assets/bootstrap/js/bootstrap.min.js"></script>
                 <script src="<?php echo base_url() ?>assets/bootstrap/js/main.js"></script>
+                <script>
+                    var close = document.getElementsByClassName("close");
+                    var i;
+
+                    for (i = 0; i < close.length; i++) {
+                        close[i].addEventListener("click",
+                            function() {
+                                this.parentElement.style.display = 'none';
+                            });
+                    }
+                </script>
                 <!-- <script>
                     var btnContainer = document.getElementsByClassName("navbar-nav");
 

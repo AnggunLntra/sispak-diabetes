@@ -3,11 +3,16 @@
 class Manage_Symptoms extends CI_Controller
 {
 
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('form');
+        $this->load->library('session', 'form_validation', 'pagination');
+        $this->load->model('m_sispak');
+    }
+
     public function index()
     {
-        $this->load->library('pagination');
-        $this->load->model('m_sispak');
-
         $config['base_url'] = site_url('Admin/Pages/Manage_Symptoms/index');
         $config['total_rows'] = $this->m_sispak->countGejala();
         $config['per_page'] = 5;
@@ -54,9 +59,6 @@ class Manage_Symptoms extends CI_Controller
 
     public function Create_Symptoms_Action()
     {
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-
         $this->_rules();
 
         if ($this->form_validation->run() === FALSE) {
@@ -72,9 +74,7 @@ class Manage_Symptoms extends CI_Controller
 
             $this->m_sispak->Create($data, 'gejala');
 
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Gejala Diabetes Berhasil Ditambahkan!.
-            </div>');
+            $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
             redirect('Admin/Pages/Manage_Symptoms');
         }
     }
@@ -109,9 +109,7 @@ class Manage_Symptoms extends CI_Controller
             );
 
             $this->m_sispak->Update('gejala', $data, $where);
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Gejala Diabetes Berhasil Diupdate!.
-            </div>');
+            $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
             redirect('Admin/Pages/Manage_Symptoms');
         }
     }
@@ -121,10 +119,7 @@ class Manage_Symptoms extends CI_Controller
         $where = array('id_gejala' => $id);
 
         $this->m_sispak->Delete('gejala', $where);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        Data Gejala Diabetes Berhasil Dihapus!.
-        </button>
-        </div>');
+        $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
         redirect('Admin/Pages/Manage_Symptoms');
     }
 

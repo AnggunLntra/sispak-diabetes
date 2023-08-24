@@ -36,7 +36,7 @@
                                         <label for="id_jenis" class="col-sm-4 col-form-label">Id Jenis</label>
                                         <div class="col-sm-8">
                                             <select class="custom-select" id="id_jenis" name="id_jenis">
-                                                <option value="<?php echo $bp->id_jenis ?>" selected><?php echo $bp->id_jenis ?>"</option>
+                                                <option value="<?php echo $bp->id_jenis ?>" selected><?php echo $bp->id_jenis ?></option>
                                                 <?php foreach ($jenis_diabetes as $jns) : ?>
                                                     <option value="<?php echo $jns['id_jenis'] ?>"><?php echo $jns['id_jenis'] ?> (<?php echo $jns['jenis_dm'] ?>)</option>
                                                 <?php endforeach ?>

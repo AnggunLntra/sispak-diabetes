@@ -51,9 +51,7 @@ class Manage_Knowladge_Base extends CI_Controller
 
             $this->m_sispak->Create($data, 'basis_pengetahuan');
 
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Basis Pengetahuan Berhasil Ditambahkan!.
-            </div>');
+            $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
             redirect('Admin/Pages/Manage_Knowladge_Base');
         }
     }
@@ -96,9 +94,7 @@ class Manage_Knowladge_Base extends CI_Controller
             );
 
             $this->m_sispak->Update('basis_pengetahuan', $data, $where);
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Basis Pengetahuan Berhasil Diupdate!.
-            </div>');
+            $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
             redirect('Admin/Pages/Manage_Knowladge_Base');
         }
     }
@@ -108,10 +104,7 @@ class Manage_Knowladge_Base extends CI_Controller
         $where = array('id_pengetahuan' => $id);
 
         $this->m_sispak->Delete('basis_pengetahuan', $where);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        Data Basis Pengetahuan Berhasil Dihapus!.
-        </button>
-        </div>');
+        $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
         redirect('Admin/Pages/Manage_Knowladge_Base');
     }
 
