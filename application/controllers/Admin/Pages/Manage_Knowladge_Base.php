@@ -6,6 +6,7 @@ class Manage_Knowladge_Base extends CI_Controller
 
     public function index()
     {
+        $data['halaman'] = 'Data Basis Pengetahuan';
         $this->load->model('M_Sispak');
         $data['basis_pengetahuan'] = $this->M_Sispak->getKnowladge();
         $this->load->view('admin/templates/header');

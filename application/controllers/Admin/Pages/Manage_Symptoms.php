@@ -43,6 +43,7 @@ class Manage_Symptoms extends CI_Controller
         $data['gejala'] = $this->m_sispak->getGejala($config['per_page'], $data['page']);
 
         $this->pagination->initialize($config);
+        $data['halaman'] = 'Data Gejala Diabetes';
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/manage-symptoms', $data);

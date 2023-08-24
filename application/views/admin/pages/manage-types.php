@@ -1,19 +1,8 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
+            <?php $this->view('admin/templates/navbar'); ?>
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-danger">
-                        <i class="fa fa-bars"></i>
-                        <span class="sr-only">Toggle Menu</span>
-                    </button>
-
-                    <div>
-                        <h4>Data Jenis Diabetes</h4>
-                    </div>
-                </div>
-            </nav>
 
             <div class="row mb-3">
                 <div class="d-flex justify-content-end">

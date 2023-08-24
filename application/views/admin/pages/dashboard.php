@@ -1,19 +1,7 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-danger">
-                        <i class="fa fa-bars"></i>
-                        <span class="sr-only">Toggle Menu</span>
-                    </button>
-
-                    <div>
-                        <h4>Dashboard</h4>
-                    </div>
-                </div>
-            </nav>
+            <?php $this->view('admin/templates/navbar'); ?>
 
             <div class="row">
                 <p class="fst-italic fs-5">Selamat Datang di Halaman Dashboard Admin <span class="fw-bold">SI<span class="text-warning">PAKAR</span></span></p>

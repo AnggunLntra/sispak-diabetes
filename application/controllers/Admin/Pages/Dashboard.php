@@ -21,6 +21,7 @@ class Dashboard extends CI_Controller
      */
     public function index()
     {
+        $data['halaman'] = 'Dashboard';
         $this->load->model('m_sispak');
         $data['gejala'] = $this->m_sispak->getNumRowsGejala();
         $data['jenis_diabetes'] = $this->m_sispak->getNumRowsJenis();

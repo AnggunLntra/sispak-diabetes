@@ -21,6 +21,7 @@ class Manage_Types extends CI_Controller
      */
     public function index()
     {
+        $data['halaman'] = 'Data Tipe Diabetes';
         $this->load->model('M_Sispak');
         $data['jenis_diabetes'] = $this->M_Sispak->getjenis();
         $this->load->view('admin/templates/header');
