@@ -7,7 +7,9 @@ class Manage_Symptoms extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('form');
-        $this->load->library('session', 'form_validation', 'pagination');
+        $this->load->library('session');
+        $this->load->library('form_validation');
+        $this->load->library('pagination');
         $this->load->model('m_sispak');
     }
 

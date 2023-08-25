@@ -4,10 +4,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Manage_Knowladge_Base extends CI_Controller
 {
 
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('M_Sispak');
+        $this->load->helper('form');
+        $this->load->library('session');
+        $this->load->library('form_validation');
+    }
+
     public function index()
     {
         $data['halaman'] = 'Data Basis Pengetahuan';
-        $this->load->model('M_Sispak');
         $data['basis_pengetahuan'] = $this->M_Sispak->getKnowladge();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
@@ -17,7 +25,6 @@ class Manage_Knowladge_Base extends CI_Controller
 
     public function Create_Knowladge_Base()
     {
-        $this->load->model('M_Sispak');
         $data['halaman'] = 'Tambah Basis Pengetahuan';
         $data['jenis_diabetes'] = $this->m_sispak->getJenis();
         $data['gejala'] = $this->m_sispak->getGejalaDM();
@@ -29,9 +36,6 @@ class Manage_Knowladge_Base extends CI_Controller
 
     public function Create_Knowladge_Base_Action()
     {
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-
         $this->_rules();
 
         if ($this->form_validation->run() === FALSE) {
