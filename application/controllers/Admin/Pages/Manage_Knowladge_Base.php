@@ -117,6 +117,8 @@ class Manage_Knowladge_Base extends CI_Controller
         $this->form_validation->set_rules('id_jenis', 'ID Jenis Diabetes Melitus', 'required');
         $this->form_validation->set_rules('id_gejala', 'ID Gejala Diabetes Melitus', 'required');
         $this->form_validation->set_rules('nilai_fuzzy', 'Nilai Fuzzy', 'required');
+        $this->form_validation->set_message('required', '%s tidak boleh kosong');
+
         // $this->form_validation->set_rules('solusi', 'solusi', 'required');
     }
 }

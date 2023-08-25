@@ -99,16 +99,16 @@ class Manage_Symptoms extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->Update_Symptoms($id);
         } else {
-            $id_gejala              = $this->input->post('id_gejala');
-            $gejala           = $this->input->post('gejala');
+            $id_gejala          = $this->input->post('id_gejala');
+            $gejala             = $this->input->post('gejala');
 
             $data = array(
-                'id_gejala'                  => $id_gejala,
-                'gejala'                 => $gejala,
+                'id_gejala'     => $id_gejala,
+                'gejala'        => $gejala,
             );
 
             $where = array(
-                'id_gejala' => $id
+                'id_gejala'     => $id
             );
 
             $this->m_sispak->Update('gejala', $data, $where);
@@ -134,5 +134,6 @@ class Manage_Symptoms extends CI_Controller
             'required'
         );
         $this->form_validation->set_rules('gejala', 'Gejala', 'required');
+        $this->form_validation->set_message('required', '%s tidak boleh kosong');
     }
 }

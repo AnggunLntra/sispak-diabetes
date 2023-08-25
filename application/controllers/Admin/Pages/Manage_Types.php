@@ -123,5 +123,6 @@ class Manage_Types extends CI_Controller
         $this->form_validation->set_rules('jenis_dm', 'Jenis Diabetes Melitus', 'required');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
         $this->form_validation->set_rules('solusi', 'Solusi', 'required');
+        $this->form_validation->set_message('required', '%s tidak boleh kosong');
     }
 }

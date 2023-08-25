@@ -13,6 +13,11 @@
                             });
                     }
                 </script>
+                <script>
+                    function focusFunction() {
+                        document.getElementsByTagName("span").style.display = 'none';
+                    }
+                </script>
                 <!-- <script>
                     var btnContainer = document.getElementsByClassName("navbar-nav");
 

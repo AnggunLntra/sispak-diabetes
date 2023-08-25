@@ -15,7 +15,7 @@
                                     <label for="id_pengetahuan" class="col-sm-4 col-form-label">Id Pengetahuan</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="id_pengetahuan" name="id_pengetahuan" value="<?php echo set_value('id_pengetahuan'); ?>">
-                                        <span class="small text-warning fst-italic"><?php echo form_error('id_pengetahuan'); ?></span>
+                                        <span class="small text-danger fst-italic"><?php echo form_error('id_pengetahuan'); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                                                 <option value="<?php echo set_value('$jns["id_jenis"]'); ?>"><?php echo $jns['id_jenis'] ?> (<?php echo $jns['jenis_dm'] ?>)</option>
                                             <?php endforeach ?>
                                         </select>
-                                        <span class="small text-warning fst-italic"><?php echo form_error('id_jenis'); ?></span>
+                                        <span class="small text-danger fst-italic"><?php echo form_error('id_jenis'); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -39,11 +39,12 @@
                                     <label for="id_gejala" class="col-sm-4 col-form-label">Id Gejala</label>
                                     <div class="col-sm-8">
                                         <select class="custom-select" id="id_gejala" name="id_gejala">
+                                            <option value="0" selected>Pilih ID Gejala</option>
                                             <?php foreach ($gejala as $gjl) : ?>
                                                 <option value="<?php echo set_value('$gjl["id_gejala"]') ?>"><?php echo $gjl['id_gejala'] ?> (<?php echo $gjl['gejala'] ?>)</option>
                                             <?php endforeach ?>
                                         </select>
-                                        <span class="small text-warning fst-italic"><?php echo form_error('id_gejala'); ?></span>
+                                        <span class="small text-danger fst-italic"><?php echo form_error('id_gejala'); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +53,7 @@
                                     <label for="nilai_fuzzy" class="col-sm-4 col-form-label">Nilai Fuzzy</label>
                                     <div class="col-sm-8">
                                         <input type="number" class="form-control" id="nilai_fuzzy" name="nilai_fuzzy" value="<?php echo set_value('nilai_fuzzy') ?>">
-                                        <span class="small text-warning fst-italic"><?php echo form_error('nilai_fuzzy'); ?></span>
+                                        <span class="small text-danger fst-italic"><?php echo form_error('nilai_fuzzy'); ?></span>
                                     </div>
                                 </div>
                             </div>
