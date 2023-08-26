@@ -46,7 +46,7 @@ class Manage_Symptoms extends CI_Controller
 
         $this->pagination->initialize($config);
         $data['halaman'] = 'Data Gejala Diabetes';
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/manage-symptoms', $data);
         $this->load->view('admin/templates/footer');
@@ -55,7 +55,7 @@ class Manage_Symptoms extends CI_Controller
     public function Create_Symptoms()
     {
         $data['halaman'] = 'Tambah Gejala Diabetes';
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/create-symptom', $data);
         $this->load->view('admin/templates/footer');
@@ -88,7 +88,7 @@ class Manage_Symptoms extends CI_Controller
         $where = array('id_gejala' => $id);
         $data['halaman'] = 'Ubah Gejala Diabetes';
         $data['gejala'] = $this->M_Sispak->getData('gejala', $where)->result();
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/update-symptom', $data);
         $this->load->view('admin/templates/footer');

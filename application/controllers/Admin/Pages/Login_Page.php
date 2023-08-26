@@ -11,7 +11,7 @@ class Login_Page extends CI_Controller
     public function index()
     {
         $data['admin'] = $this->M_Sispak->getData();
-        $this->load->view('Admin/Templates/header');
+        $this->load->view('Admin/Templates/header', $data);
         $this->load->view('Admin/Pages/login', $data);
         $this->load->view('Admin/Templates/footer');
     }

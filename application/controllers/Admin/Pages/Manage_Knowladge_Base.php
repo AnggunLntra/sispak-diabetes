@@ -17,7 +17,7 @@ class Manage_Knowladge_Base extends CI_Controller
     {
         $data['halaman'] = 'Data Basis Pengetahuan';
         $data['basis_pengetahuan'] = $this->M_Sispak->getKnowladge();
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/manage-knowladge-base', $data);
         $this->load->view('admin/templates/footer');
@@ -28,7 +28,7 @@ class Manage_Knowladge_Base extends CI_Controller
         $data['halaman'] = 'Tambah Basis Pengetahuan';
         $data['jenis_diabetes'] = $this->M_Sispak->getJenis();
         $data['gejala'] = $this->M_Sispak->getGejalaDM();
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/create-knowladge-base', $data);
         $this->load->view('admin/templates/footer');
@@ -69,7 +69,7 @@ class Manage_Knowladge_Base extends CI_Controller
         $data['basis_pengetahuan'] = $this->M_Sispak->getData('basis_pengetahuan', $where)->result();
         $data['jenis_diabetes'] = $this->M_Sispak->getJenis();
         $data['gejala'] = $this->M_Sispak->getGejalaDM();
-        $this->load->view('admin/templates/header');
+        $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/update-knowladge-base', $data);
         $this->load->view('admin/templates/footer');
