@@ -26,8 +26,8 @@ class Manage_Knowladge_Base extends CI_Controller
     public function Create_Knowladge_Base()
     {
         $data['halaman'] = 'Tambah Basis Pengetahuan';
-        $data['jenis_diabetes'] = $this->m_sispak->getJenis();
-        $data['gejala'] = $this->m_sispak->getGejalaDM();
+        $data['jenis_diabetes'] = $this->M_Sispak->getJenis();
+        $data['gejala'] = $this->M_Sispak->getGejalaDM();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/create-knowladge-base', $data);
@@ -55,7 +55,7 @@ class Manage_Knowladge_Base extends CI_Controller
                 // 'solusi'             => $solusi,
             );
 
-            $this->m_sispak->Create($data, 'basis_pengetahuan');
+            $this->M_Sispak->Create($data, 'basis_pengetahuan');
 
             $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
             redirect('Admin/Pages/Manage_Knowladge_Base');
@@ -66,9 +66,9 @@ class Manage_Knowladge_Base extends CI_Controller
     {
         $where = array('id_pengetahuan' => $id);
         $data['halaman'] = 'Ubah Basis Pengetahuan';
-        $data['basis_pengetahuan'] = $this->m_sispak->getData('basis_pengetahuan', $where)->result();
-        $data['jenis_diabetes'] = $this->m_sispak->getJenis();
-        $data['gejala'] = $this->m_sispak->getGejalaDM();
+        $data['basis_pengetahuan'] = $this->M_Sispak->getData('basis_pengetahuan', $where)->result();
+        $data['jenis_diabetes'] = $this->M_Sispak->getJenis();
+        $data['gejala'] = $this->M_Sispak->getGejalaDM();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/update-knowladge-base', $data);
@@ -100,7 +100,7 @@ class Manage_Knowladge_Base extends CI_Controller
                 'id_pengetahuan' => $id
             );
 
-            $this->m_sispak->Update('basis_pengetahuan', $data, $where);
+            $this->M_Sispak->Update('basis_pengetahuan', $data, $where);
             $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
             redirect('Admin/Pages/Manage_Knowladge_Base');
         }
@@ -110,7 +110,7 @@ class Manage_Knowladge_Base extends CI_Controller
     {
         $where = array('id_pengetahuan' => $id);
 
-        $this->m_sispak->Delete('basis_pengetahuan', $where);
+        $this->M_Sispak->Delete('basis_pengetahuan', $where);
         $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
         redirect('Admin/Pages/Manage_Knowladge_Base');
     }

@@ -50,7 +50,7 @@ class Manage_Types extends CI_Controller
                 'solusi'             => $solusi,
             );
 
-            $this->m_sispak->Create($data, 'jenis_diabetes');
+            $this->M_Sispak->Create($data, 'jenis_diabetes');
 
             $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
             redirect('Admin/Pages/Manage_Types');
@@ -61,7 +61,7 @@ class Manage_Types extends CI_Controller
     {
         $where = array('id_jenis' => $id);
         $data['halaman'] = 'Ubah Tipe Diabetes';
-        $data['jenis_diabetes'] = $this->m_sispak->getData('jenis_diabetes', $where)->result();
+        $data['jenis_diabetes'] = $this->M_Sispak->getData('jenis_diabetes', $where)->result();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/update-type', $data);
@@ -91,7 +91,7 @@ class Manage_Types extends CI_Controller
                 'id_jenis' => $id
             );
 
-            $this->m_sispak->Update('jenis_diabetes', $data, $where);
+            $this->M_Sispak->Update('jenis_diabetes', $data, $where);
             $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
             redirect('Admin/Pages/Manage_Types');
         }
@@ -101,7 +101,7 @@ class Manage_Types extends CI_Controller
     {
         $where = array('id_jenis' => $id);
 
-        $this->m_sispak->Delete('jenis_diabetes', $where);
+        $this->M_Sispak->Delete('jenis_diabetes', $where);
         $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
         redirect('Admin/Pages/Manage_Types');
     }

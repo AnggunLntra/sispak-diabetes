@@ -10,13 +10,13 @@ class Manage_Symptoms extends CI_Controller
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->library('pagination');
-        $this->load->model('m_sispak');
+        $this->load->model('M_Sispak');
     }
 
     public function index()
     {
         $config['base_url'] = site_url('Admin/Pages/Manage_Symptoms/index');
-        $config['total_rows'] = $this->m_sispak->countGejala();
+        $config['total_rows'] = $this->M_Sispak->countGejala();
         $config['per_page'] = 5;
 
         $config['uri_segment'] = 5;
@@ -42,7 +42,7 @@ class Manage_Symptoms extends CI_Controller
         $config['last_tagl_close'] = '</span></li>';
 
         $data['page'] = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
-        $data['gejala'] = $this->m_sispak->getGejala($config['per_page'], $data['page']);
+        $data['gejala'] = $this->M_Sispak->getGejala($config['per_page'], $data['page']);
 
         $this->pagination->initialize($config);
         $data['halaman'] = 'Data Gejala Diabetes';
@@ -76,7 +76,7 @@ class Manage_Symptoms extends CI_Controller
                 'gejala'             => $gejala,
             );
 
-            $this->m_sispak->Create($data, 'gejala');
+            $this->M_Sispak->Create($data, 'gejala');
 
             $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
             redirect('Admin/Pages/Manage_Symptoms');
@@ -87,7 +87,7 @@ class Manage_Symptoms extends CI_Controller
     {
         $where = array('id_gejala' => $id);
         $data['halaman'] = 'Ubah Gejala Diabetes';
-        $data['gejala'] = $this->m_sispak->getData('gejala', $where)->result();
+        $data['gejala'] = $this->M_Sispak->getData('gejala', $where)->result();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/update-symptom', $data);
@@ -113,7 +113,7 @@ class Manage_Symptoms extends CI_Controller
                 'id_gejala'     => $id
             );
 
-            $this->m_sispak->Update('gejala', $data, $where);
+            $this->M_Sispak->Update('gejala', $data, $where);
             $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
             redirect('Admin/Pages/Manage_Symptoms');
         }
@@ -122,7 +122,7 @@ class Manage_Symptoms extends CI_Controller
     public function Delete_Symptoms($id)
     {
         $where = array('id_gejala' => $id);
-        $this->m_sispak->Delete('gejala', $where);
+        $this->M_Sispak->Delete('gejala', $where);
         $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
         redirect('Admin/Pages/Manage_Symptoms');
     }
