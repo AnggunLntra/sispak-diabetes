@@ -5,20 +5,19 @@
                 <span class="fs-3 fw-bold">Formulir Tes Diabetes</span>
             </div>
             <div class="card-body">
+                <div class="card-text">
+                    <p>Sebelum melakukan tes, Silahkan isi beberapa data dibawah ini :</p>
+                </div>
                 <form action="post">
                     <table class="table table-borderless">
                         <tbody>
                             <tr>
-                                <td>Nama Pasien</td>
+                                <td>Nama</td>
                                 <td class="col-8 fw-semibold"><input type="text" class="form-control"></td>
                             </tr>
                             <tr>
-                                <td>Tempat Lahir</td>
+                                <td>Umur</td>
                                 <td class="col-8 fw-semibold"><input type="text" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td>Tanggal Lahir</td>
-                                <td class="col-8 fw-semibold"><input type="date" class="form-control"></td>
                             </tr>
                             <tr>
                                 <td>Jenis Kelamin</td>
@@ -30,14 +29,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Alamat</td>
-                                <td class="col-8 fw-semibold"><textarea name="alamat" id="alamatRumah" cols="20" rows="3" class="form-control"></textarea></td>
-
+                                <td>Tinggi Badan</td>
+                                <td class="col-8 fw-semibold"><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>Berat Badan</td>
+                                <td class="col-8 fw-semibold"><input type="text" class="form-control"></td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-danger">Mulai Diagnosis</button>
+                        <a href="<?php echo base_url('Pages/Test_Page/Diagnosis_Page') ?>" class="btn btn-danger">Selanjutnya</a>
                     </div>
                 </form>
             </div>
