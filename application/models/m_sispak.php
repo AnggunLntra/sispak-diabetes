@@ -2,81 +2,44 @@
 
 class M_Sispak extends CI_Model
 {
-
+    //function untuk menghitung baris/isi tabel
     public function countRows($table)
     {
         return $this->db->get($table)->num_rows();
     }
 
+    //function untuk ambil data tabel
     public function getTable($table, $limit, $start)
     {
         return $this->db->get($table, $limit, $start)->result_array();
     }
 
+    //function untuk mengitung jumlah baris
     public function getNumRows($table)
     {
         $query = $this->db->query("SELECT * FROM `$table`");
         return $query->num_rows();
     }
 
-    public function countGejala()
-    {
-        return $this->db->get('gejala')->num_rows();
-    }
-
-    public function getGejala($limit, $start)
-    {
-        return $this->db->get('gejala', $limit, $start)->result_array();
-    }
-
-    public function getGejalaDM()
-    {
-        return $this->db->get('gejala')->result_array();
-    }
-
-    public function getjenis()
-    {
-        return $this->db->get('jenis_diabetes')->result_array();
-    }
-
-    public function getKnowladge()
-    {
-        return $this->db->get('basis_pengetahuan_sistem')->result_array();
-    }
-
-    public function getNumRowsGejala()
-    {
-        $query = $this->db->query('SELECT * FROM gejala');
-        return $query->num_rows();
-    }
-
-    public function getNumRowsJenis()
-    {
-        $query = $this->db->query('SELECT * FROM jenis_diabetes');
-        return $query->num_rows();
-    }
-
-    public function getNumRowsPengetahuan()
-    {
-        $query = $this->db->query('SELECT * FROM basis_pengetahuan');
-        return $query->num_rows();
-    }
-
+    //function untuk ambil data
     public function getData($table, $where, $limit = NULL)
     {
         return $this->db->get_where($table, $where, $limit);
     }
 
+    //function untuk membuat data baru
     public function Create($data, $table)
     {
         $this->db->insert($table, $data);
     }
 
+    //function untuk memperbarui data
     public function Update($table, $data, $where)
     {
         $this->db->update($table, $data, $where);
     }
 
+    //function untuk hapus data
     public function Delete($table, $where)
     {
         $this->db->delete($table, $where);
