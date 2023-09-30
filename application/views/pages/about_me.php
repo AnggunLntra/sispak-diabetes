@@ -1,48 +1,48 @@
 <div class="container min-vh-100" style="margin-top: 8rem;">
     <div class="row justify-content-center">
-        <div class="col-11">
+        <div class="col-12">
             <div class="row">
                 <div class="col-12">
-                    <div class="card bg-light border-0 mb-3 pt-4 py-3">
+                    <div class="card bg-light border-0 p-3">
                         <div class="card-title text-center">
                             <span class="fw-bold fs-2">Tentang <span class="text-uppercase text-danger">sipakar</span></span>
                         </div>
                         <div class="card-body">
-                            <p>Sipakar adalah sistem pakar berbasis website yang dibuat dengan tujuan untuk memudahkan masyarakat dalam melakukan diagnosis secara dini penyakit yang diderita. Untuk saat ini sipakar hanya dapat melakukan diagnosis secara dini penyakit diabetes melitus berdasarkan gejala-gejala yang biasa dialami oleh kebanyakan penderita penyakit diabetes.</p>
+                            <p>SIPAKAR adalah aplikasi sistem pakar berbasis website yang dibuat dengan tujuan untuk memudahkan masyarakat dalam melakukan diagnosis secara dini penyakit yang diderita. Untuk saat ini sipakar hanya dapat melakukan diagnosis secara dini penyakit diabetes melitus berdasarkan gejala-gejala yang biasa dialami oleh kebanyakan penderita penyakit diabetes.</p>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="card border-0 p-0">
                                     <div class="card-header border-0">
-                                        <div class="card-title fw-bold">Fitur :</div>
-                                    </div>
-                                    <div class="card-body bg-light">
-                                        <div class="row">
-                                            <div class="col-md-3 col-sm-6 mb-3">
-                                                <div class="card h-100 bg-danger py-2 text-center shadow">
-                                                    <div class="card-body d-flex justify-content-center align-items-center text-white">
-                                                        <span class="fw-bold">Tes Diagnosis Diabetes</span>
+                                        <div class="card-title fw-bold">Menu</div>
+                                        <div class="card-body bg-light">
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-6 mb-3">
+                                                    <div class="card h-100 bg-danger py-2 text-center shadow">
+                                                        <div class="card-body d-flex justify-content-center align-items-center text-white">
+                                                            <span class="fw-bold">Tes Diagnosis</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-3 col-sm-6 mb-3">
-                                                <div class="card h-100 bg-secondary py-2 text-center shadow">
-                                                    <div class="card-body d-flex justify-content-center align-items-center">
-                                                        <span class="fw-bold">Gejala Diabetes</span>
+                                                <div class="col-md-3 col-sm-6 mb-3">
+                                                    <div class="card h-100 bg-secondary py-2 text-center shadow">
+                                                        <div class="card-body d-flex justify-content-center align-items-center text-white">
+                                                            <span class="fw-bold">Jenis Diabetes</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-3 col-sm-6 mb-3">
-                                                <div class="card h-100 bg-danger py-2 text-center shadow">
-                                                    <div class="card-body d-flex justify-content-center align-items-center text-white">
-                                                        <span class="fw-bold">Tipe Diabetes</span>
+                                                <div class="col-md-3 col-sm-6 mb-3">
+                                                    <div class="card h-100 bg-danger  py-2 text-center shadow">
+                                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                                            <span class="fw-bold">Gejala Diabetes</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-3 col-sm-6 mb-3">
-                                                <div class="card h-100 bg-secondary py-2 text-center shadow">
-                                                    <div class="card-body d-flex justify-content-center align-items-center">
-                                                        <span class="fw-bold">Cara Penggunaan</span>
+                                                <div class="col-md-3 col-sm-6 mb-3">
+                                                    <div class="card h-100 bg-secondary py-2 text-center shadow">
+                                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                                            <span class="fw-bold">Cara Penggunaan</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -53,8 +53,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
+                <!-- <div class="row">
                 <div class="col-md-6">
                     <div class="card border-0">
                         <div class="card-header">
@@ -90,8 +89,8 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
             </div>
         </div>
     </div>
-</div>
 </div>

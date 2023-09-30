@@ -1,13 +1,13 @@
 <?php
 class M_Pengguna extends CI_Model
 {
-    public function getGejala()
+    public function getTable($table)
     {
-        return $this->db->get('gejala')->result_array();
+        return $this->db->get($table)->result_array();
     }
 
-    public function getJenis()
+    public function countRows($table)
     {
-        return $this->db->get('jenis_diabetes')->result_array();
+        return $this->db->get($table)->num_rows();
     }
 }

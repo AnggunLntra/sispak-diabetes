@@ -3,6 +3,22 @@
 class M_Sispak extends CI_Model
 {
 
+    public function countRows($table)
+    {
+        return $this->db->get($table)->num_rows();
+    }
+
+    public function getTable($table, $limit, $start)
+    {
+        return $this->db->get($table, $limit, $start)->result_array();
+    }
+
+    public function getNumRows($table)
+    {
+        $query = $this->db->query("SELECT * FROM `$table`");
+        return $query->num_rows();
+    }
+
     public function countGejala()
     {
         return $this->db->get('gejala')->num_rows();
@@ -25,7 +41,7 @@ class M_Sispak extends CI_Model
 
     public function getKnowladge()
     {
-        return $this->db->get('basis_pengetahuan')->result_array();
+        return $this->db->get('basis_pengetahuan_sistem')->result_array();
     }
 
     public function getNumRowsGejala()

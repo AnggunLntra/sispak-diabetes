@@ -21,14 +21,15 @@
                             </div>
                             <div class="col">
                                 <div class="form-group row">
-                                    <label for="id_jenis" class="col-sm-4 col-form-label">Id Jenis</label>
+                                    <label for="jenis_dm" class="col-sm-4 col-form-label">Jenis Diabetes</label>
                                     <div class="col-sm-8">
-                                        <select class="custom-select" id="id_jenis" name="id_jenis">
+                                        <select class="custom-select" id="jenis_dm" name="jenis_dm">
+                                            <option value="0" selected>Pilih Jenis Diabetes</option>
                                             <?php foreach ($jenis_diabetes as $jns) : ?>
-                                                <option value="<?php echo set_value('$jns["id_jenis"]'); ?>"><?php echo $jns['id_jenis'] ?> (<?php echo $jns['jenis_dm'] ?>)</option>
+                                                <option value="<?php echo $jns['jenis_dm'] ?>"><?php echo $jns['jenis_dm'] ?> (<?php echo $jns['jenis_dm'] ?>)</option>
                                             <?php endforeach ?>
                                         </select>
-                                        <span class="small text-danger fst-italic"><?php echo form_error('id_jenis'); ?></span>
+                                        <span class="small text-danger fst-italic"><?php echo form_error('jenis_dm'); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -36,23 +37,24 @@
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group row">
-                                    <label for="id_gejala" class="col-sm-4 col-form-label">Id Gejala</label>
+                                    <label for="gejala" class="col-sm-4 col-form-label">Gejala Diabetes</label>
                                     <div class="col-sm-8">
-                                        <select class="custom-select" id="id_gejala" name="id_gejala">
-                                            <option value="0" selected>Pilih ID Gejala</option>
+                                        <select class="custom-select" id="ejala" name="gejala">
+                                            <option value="0" selected>Pilih Gejala Diabetes</option>
                                             <?php foreach ($gejala as $gjl) : ?>
-                                                <option value="<?php echo set_value('$gjl["id_gejala"]') ?>"><?php echo $gjl['id_gejala'] ?> (<?php echo $gjl['gejala'] ?>)</option>
+                                                <option value="<?php echo $gjl['gejala'] ?>"><?php echo $gjl['gejala'] ?></option>
                                             <?php endforeach ?>
                                         </select>
-                                        <span class="small text-danger fst-italic"><?php echo form_error('id_gejala'); ?></span>
+                                        <span class="small text-danger fst-italic"><?php echo form_error('gejala'); ?></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group row">
-                                    <label for="nilai_fuzzy" class="col-sm-4 col-form-label">Nilai Fuzzy</label>
+                                    <label for="nilai_fuzzy" class="col-sm-4 col-form-label">Nilai Keanggotaan</label>
                                     <div class="col-sm-8">
-                                        <input type="number" class="form-control" id="nilai_fuzzy" name="nilai_fuzzy" value="<?php echo set_value('nilai_fuzzy') ?>">
+                                        <!-- <input type="number" class="form-control" id="nilai_fuzzy" name="nilai_fuzzy" value="<?php echo set_value('nilai_fuzzy') ?>"> -->
+                                        <input type="number" class="form-control" id="nilai_fuzzy" name="nilai_fuzzy" value="">
                                         <span class="small text-danger fst-italic"><?php echo form_error('nilai_fuzzy'); ?></span>
                                     </div>
                                 </div>

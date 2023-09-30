@@ -13,8 +13,7 @@
                         <p class="fw-bold">Deskripsi :</p>
                         <p class="fst-italic"><?php echo $jns['deskripsi'] ?></p>
                         <p class="fw-bold">Solusi :</p>
-                        <p class="fst-italic"><?php echo $jns['deskripsi'] ?></p>
-                        <!-- <p class="fst-italic"><?php echo $jns['solusi'] ?></p> -->
+                        <p class="fst-italic"><?php echo $jns['solusi'] ?></p>
                     </div>
                 </div>
             </div>

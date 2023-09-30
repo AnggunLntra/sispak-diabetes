@@ -8,7 +8,7 @@
                     <div class="mb-5">
                         <h4 class="text-center">Form Ubah Data</h4>
                     </div>
-                    <?php foreach ($basis_pengetahuan as $bp) : ?>
+                    <?php foreach ($basis_pengetahuan_sistem as $bp) : ?>
                         <form method="POST" action="<?php echo base_url('Admin/Pages/Manage_Knowladge_Base/Update_Knowladge_Base_Action/') . $bp->id_pengetahuan ?>">
                             <div class="form-row">
                                 <div class="col">
@@ -21,12 +21,12 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group row">
-                                        <label for="id_jenis" class="col-sm-4 col-form-label">Id Jenis</label>
+                                        <label for="jenis_dm" class="col-sm-4 col-form-label">Jenis Diabetes</label>
                                         <div class="col-sm-8">
-                                            <select class="custom-select" id="id_jenis" name="id_jenis">
-                                                <option value="<?php echo $bp->id_jenis ?>" selected><?php echo $bp->id_jenis ?></option>
+                                            <select class="custom-select" id="jenis_dm" name="jenis_dm">
+                                                <option value="<?php echo $bp->jenis_dm ?>" selected><?php echo $bp->jenis_dm ?></option>
                                                 <?php foreach ($jenis_diabetes as $jns) : ?>
-                                                    <option value="<?php echo $jns['id_jenis'] ?>"><?php echo $jns['id_jenis'] ?> (<?php echo $jns['jenis_dm'] ?>)</option>
+                                                    <option value="<?php echo $jns['jenis_dm'] ?>"><?php echo $jns['jenis_dm'] ?> (<?php echo $jns['jenis_dm'] ?>)</option>
                                                 <?php endforeach ?>
                                             </select>
                                         </div>
@@ -36,12 +36,12 @@
                             <div class="form-row">
                                 <div class="col">
                                     <div class="form-group row">
-                                        <label for="id_gejala" class="col-sm-4 col-form-label">Id Gejala</label>
+                                        <label for="gejala" class="col-sm-4 col-form-label">Gejala Diabetes</label>
                                         <div class="col-sm-8">
-                                            <select class="custom-select" id="id_gejala" name="id_gejala">
-                                                <option value="<?php echo $bp->id_gejala ?>" selected><?php echo $bp->id_gejala ?></option>
+                                            <select class="custom-select" id="gejala" name="gejala">
+                                                <option value="<?php echo $bp->gejala ?>" selected><?php echo $bp->gejala ?></option>
                                                 <?php foreach ($gejala as $gjl) : ?>
-                                                    <option value="<?php echo $gjl['id_gejala'] ?>"><?php echo $gjl['id_gejala'] ?> (<?php echo $gjl['gejala'] ?>)</option>
+                                                    <option value="<?php echo $gjl['gejala'] ?>"><?php echo $gjl['gejala'] ?></option>
                                                 <?php endforeach ?>
                                             </select>
                                         </div>
@@ -49,9 +49,9 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group row">
-                                        <label for="nilai_fuzzy" class="col-sm-4 col-form-label">Nilai Fuzzy</label>
+                                        <label for="nilai_fuzzy" class="col-sm-4 col-form-label">Nilai Keanggotaan</label>
                                         <div class="col-sm-8">
-                                            <input type="number" class="form-control" id="nilai_fuzzy" name="nilai_fuzzy" value="<?php echo $bp->nilai_fuzzy ?>">
+                                            <input type="number" class="form-control" id="nilai_fuzzy" name="nilai_fuzzy" value="0.85">
                                         </div>
                                     </div>
                                 </div>

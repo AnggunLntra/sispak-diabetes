@@ -24,11 +24,17 @@
                                 ?>">
                         <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Symptoms' ?>"><i class="fa fa-folder-o me-3"></i>Gejala Diabetes</a>
                     </li>
+                    <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Conditions') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Conditions/Create_Conditions') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Conditions/Update_Conditions')) {
+                                    echo 'active';
+                                }
+                                ?>">
+                        <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Conditions' ?>"><i class="fa fa-file me-3"></i>Kondisi</a>
+                    </li>
                     <li class="<?php if (($this->uri->uri_string() == 'Admin/Pages/Manage_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Knowladge_Base/Create_Knowladge_Base') || ($this->uri->uri_string() == 'Admin/Pages/Manage_Knowladge_Base/Update_Knowladge_Base')) {
                                     echo 'active';
                                 }
                                 ?>">
-                        <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Knowladge_Base' ?>"><i class="fa fa-book me-3"></i>Basis Pengetahuan</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'Admin/Pages/Manage_Knowladge_Base' ?>"><i class="fa fa-file-text me-3"></i>Basis Pengetahuan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url() ?>"><i class="fa fa-sign-out me-3"></i>Keluar</a>

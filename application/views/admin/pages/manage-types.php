@@ -22,8 +22,8 @@
                         <thead class="thead-light">
                             <tr>
                                 <th class="text-center" scope="col">No.</th>
-                                <th class="text-nowrap" scope="col">Id Jenis</th>
-                                <th scope="col">Jenis Diabetes</th>
+                                <th class="col-1 text-nowrap" scope="col">ID Jenis</th>
+                                <th scope="col-2">Jenis Diabetes</th>
                                 <th class="col-3" scope="col">Deskripsi</th>
                                 <th class="col-3" scope="col">Solusi</th>
                                 <th class="col-2 text-center" class="text-center">Aksi</th>

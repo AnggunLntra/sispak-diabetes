@@ -32,14 +32,14 @@
                         <div class="form-group row">
                             <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                             <div class="col-sm-10">
-                                <input class="form-control" name="deskripsi" id="deskripsi" value="<?php echo set_value('deskripsi'); ?>"></input>
+                                <textarea class="form-control" name="deskripsi" id="deskripsi" cols="30" rows="5"><?php echo set_value('deskripsi'); ?></textarea>
                                 <span class="small text-danger fst-italic"><?php echo form_error('deskripsi'); ?></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="solusi" class="col-sm-2 col-form-label">Solusi</label>
                             <div class="col-sm-10">
-                                <input class="form-control" name="solusi" id="solusi" value="<?php echo set_value('solusi'); ?>"></input>
+                                <textarea class="form-control" name="solusi" id="solusi" cols="30" rows="5"><?php echo set_value('solusi'); ?></textarea>
                                 <span class="small text-danger fst-italic"><?php echo form_error('solusi'); ?></span>
                             </div>
                         </div>

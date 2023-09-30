@@ -1,6 +1,6 @@
 <?php
 
-class Manage_Symptoms extends CI_Controller
+class Manage_Conditions extends CI_Controller
 {
 
     function __construct()
@@ -15,8 +15,8 @@ class Manage_Symptoms extends CI_Controller
 
     public function index()
     {
-        $config['base_url'] = site_url('Admin/Pages/Manage_Symptoms/index');
-        $config['total_rows'] = $this->M_Sispak->countGejala();
+        $config['base_url'] = site_url('Admin/Pages/Manage_Conditions/index');
+        $config['total_rows'] = $this->M_Sispak->countRows('kondisi');
         $config['per_page'] = 5;
 
         $config['uri_segment'] = 5;
@@ -42,100 +42,100 @@ class Manage_Symptoms extends CI_Controller
         $config['last_tagl_close'] = '</span></li>';
 
         $data['page'] = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
-        $data['gejala'] = $this->M_Sispak->getTable('gejala', $config['per_page'], $data['page']);
+        $data['kondisi'] = $this->M_Sispak->getTable('kondisi', $config['per_page'], $data['page']);
 
         $this->pagination->initialize($config);
-        $data['halaman'] = 'Data Gejala Diabetes';
+        $data['halaman'] = 'Data Kondisi';
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/manage-symptoms', $data);
+        $this->load->view('admin/pages/manage-conditions', $data);
         $this->load->view('admin/templates/footer');
     }
 
-    public function Create_Symptoms()
+    public function Create_Conditions()
     {
-        $data['halaman'] = 'Tambah Gejala Diabetes';
+        $data['halaman'] = 'Tambah Kondisi';
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/create-symptom', $data);
+        $this->load->view('admin/pages/create-condition', $data);
         $this->load->view('admin/templates/footer');
     }
 
-    public function Create_Symptoms_Action()
+    public function Create_Conditions_Action()
     {
         $this->_rules();
 
         if ($this->form_validation->run() === FALSE) {
-            $this->Create_Symptoms();
+            $this->Create_Conditions();
         } else {
-            $id_gejala               = $this->input->post('id_gejala');
-            $gejala                  = $this->input->post('gejala');
+            $id_kondisi               = $this->input->post('id_kondisi');
+            $kondisi                  = $this->input->post('kondisi');
 
             $data = array(
-                'id_gejala'          => $id_gejala,
-                'gejala'             => $gejala,
+                'id_kondisi'          => $id_kondisi,
+                'kondisi'             => $kondisi,
             );
 
-            $this->M_Sispak->Create($data, 'gejala');
+            $this->M_Sispak->Create($data, 'kondisi');
 
             $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
-            redirect('Admin/Pages/Manage_Symptoms');
+            redirect('Admin/Pages/Manage_Conditions');
         }
     }
 
-    public function Update_Symptoms($id)
+    public function Update_Conditions($id)
     {
-        $where = array('id_gejala' => $id);
-        $data['halaman'] = 'Ubah Gejala Diabetes';
-        $data['gejala'] = $this->M_Sispak->getData('gejala', $where)->result();
+        $where = array('id_kondisi' => $id);
+        $data['halaman'] = 'Ubah Kondisi';
+        $data['kondisi'] = $this->M_Sispak->getData('kondisi', $where)->result();
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/update-symptom', $data);
+        $this->load->view('admin/pages/update-condition', $data);
         $this->load->view('admin/templates/footer');
     }
 
-    public function Update_Symptoms_Action($id)
+    public function Update_Conditions_Action($id)
     {
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->Update_Symptoms($id);
+            $this->Update_Conditions($id);
         } else {
-            $id_gejala          = $this->input->post('id_gejala');
-            $gejala             = $this->input->post('gejala');
+            $id_kondisi          = $this->input->post('id_kondisi');
+            $kondisi             = $this->input->post('kondisi');
 
             $data = array(
-                'id_gejala'     => $id_gejala,
-                'gejala'        => $gejala,
+                'id_kondisi'     => $id_kondisi,
+                'kondisi'        => $kondisi,
             );
 
             $where = array(
-                'id_gejala'     => $id
+                'id_kondisi'     => $id
             );
 
-            $this->M_Sispak->Update('gejala', $data, $where);
+            $this->M_Sispak->Update('kondisi', $data, $where);
             $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
-            redirect('Admin/Pages/Manage_Symptoms');
+            redirect('Admin/Pages/Manage_Conditions');
         }
     }
 
-    public function Delete_Symptoms($id)
+    public function Delete_Conditions($id)
     {
-        $where = array('id_gejala' => $id);
-        $this->M_Sispak->Delete('gejala', $where);
+        $where = array('id_kondisi' => $id);
+        $this->M_Sispak->Delete('kondisi', $where);
         $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
-        redirect('Admin/Pages/Manage_Symptoms');
+        redirect('Admin/Pages/Manage_Conditions');
     }
 
     public function _rules()
     {
 
         $this->form_validation->set_rules(
-            'id_gejala',
-            'ID Gejala',
+            'id_kondisi',
+            'ID Kondisi',
             'required'
         );
-        $this->form_validation->set_rules('gejala', 'Gejala', 'required');
+        $this->form_validation->set_rules('kondisi', 'Kondisi', 'required');
         $this->form_validation->set_message('required', '%s tidak boleh kosong');
     }
 }

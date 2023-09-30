@@ -20,22 +20,22 @@
                     <table class="table table-hover border">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">Id Pengetahuan</th>
-                                <th scope="col">Id Jenis</th>
-                                <th scope="col">Id Gejala</th>
-                                <th scope="col">Nilai Fuzzy</th>
-                                <!-- <th scope="col">Solusi</th> -->
-                                <th class="text-center" scope="col">Aksi</th>
+                                <th class="text-center" scope="col">No.</th>
+                                <th scope="col">ID Pengetahuan</th>
+                                <th class="col-3">Jenis Diabetes</th>
+                                <th class="col-3">Gejala Diabetes</th>
+                                <th scope="col-2">Nilai Keanggotaan</th>
+                                <th class="col-2 text-center" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($basis_pengetahuan as $bp) : ?>
+                            <?php foreach ($basis_pengetahuan_sistem as $bp) : ?>
                                 <tr>
+                                    <td class="text-center"><?php echo ++$page ?></td>
                                     <td><?php echo $bp['id_pengetahuan'] ?></td>
-                                    <td><?php echo $bp['id_jenis'] ?></td>
-                                    <td><?php echo $bp['id_gejala'] ?></td>
-                                    <td><?php echo $bp['nilai_fuzzy'] ?></td>
-                                    <!-- <td><?php echo $bp['solusi'] ?></td> -->
+                                    <td><?php echo $bp['jenis_dm'] ?></td>
+                                    <td><?php echo $bp['gejala'] ?></td>
+                                    <td>-</td>
                                     <td class="text-center">
                                         <ul class="list-unstyled m-0">
                                             <li class="list-inline-item m-1">
@@ -50,6 +50,11 @@
                             <?php endforeach ?>
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="col">
+                            <?php echo $this->pagination->create_links(); ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

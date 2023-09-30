@@ -11,7 +11,7 @@
                         <a class="nav-link text-light active" aria-current="page" href="<?php echo base_url() ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="<?php echo base_url('Pages/Test_Page') ?>">Tes Diagnosis Diabetes</a>
+                        <a class="nav-link text-light" href="<?php echo base_url('Pages/Test_Page') ?>">Tes Diabetes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="<?php echo base_url('Pages/Diabetic_Types') ?>">Jenis Diabetes</a>

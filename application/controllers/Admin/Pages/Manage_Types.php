@@ -14,8 +14,8 @@ class Manage_Types extends CI_Controller
 
     public function index()
     {
-        $data['halaman'] = 'Data Tipe Diabetes';
-        $data['jenis_diabetes'] = $this->M_Sispak->getjenis();
+        $data['halaman'] = 'Data Jenis Diabetes';
+        $data['jenis_diabetes'] = $this->M_Sispak->getTable('jenis_diabetes', '', '');
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/manage-types', $data);
@@ -24,7 +24,7 @@ class Manage_Types extends CI_Controller
 
     public function Create_Types()
     {
-        $data['halaman'] = 'Tambah Tipe Diabetes';
+        $data['halaman'] = 'Tambah Jenis Diabetes';
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/create-type', $data);
@@ -60,7 +60,7 @@ class Manage_Types extends CI_Controller
     public function Update_Types($id)
     {
         $where = array('id_jenis' => $id);
-        $data['halaman'] = 'Ubah Tipe Diabetes';
+        $data['halaman'] = 'Ubah Jenis Diabetes';
         $data['jenis_diabetes'] = $this->M_Sispak->getData('jenis_diabetes', $where)->result();
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');

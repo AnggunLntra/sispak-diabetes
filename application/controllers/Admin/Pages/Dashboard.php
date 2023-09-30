@@ -7,9 +7,10 @@ class Dashboard extends CI_Controller
     {
         $data['halaman'] = 'Dashboard';
         $this->load->model('M_Sispak');
-        $data['gejala'] = $this->M_Sispak->getNumRowsGejala();
-        $data['jenis_diabetes'] = $this->M_Sispak->getNumRowsJenis();
-        $data['basis_pengetahuan'] = $this->M_Sispak->getNumRowsPengetahuan();
+        $data['gejala'] = $this->M_Sispak->getNumRows('gejala');
+        $data['jenis_diabetes'] = $this->M_Sispak->getNumRows('jenis_diabetes');
+        $data['kondisi'] = $this->M_Sispak->getNumRows('kondisi');
+        $data['basis_pengetahuan_sistem'] = $this->M_Sispak->getNumRows('basis_pengetahuan_sistem');
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/dashboard', $data);
