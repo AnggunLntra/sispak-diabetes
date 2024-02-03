@@ -17,32 +17,39 @@
 
             <div class="row">
                 <div class="col">
-                    <table class="table table-hover border">
+                    <table class="table table-responsive table-hover border">
                         <thead class="thead-light">
                             <tr>
                                 <th class="text-center" scope="col">No.</th>
-                                <th scope="col">ID Pengetahuan</th>
-                                <th class="col-3">Jenis Diabetes</th>
-                                <th class="col-3">Gejala Diabetes</th>
-                                <th scope="col-2">Nilai Keanggotaan</th>
+                                <th>Kode Pengetahuan</th>
+                                <th>Nama Penyakit</th>
+                                <th class="col-4">Gejala</th>
                                 <th class="col-2 text-center" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($basis_pengetahuan_sistem as $bp) : ?>
+                            <?php
+                            foreach ($pengetahuan as $index => $p) : ?>
                                 <tr>
                                     <td class="text-center"><?php echo ++$page ?></td>
-                                    <td><?php echo $bp['id_pengetahuan'] ?></td>
-                                    <td><?php echo $bp['jenis_dm'] ?></td>
-                                    <td><?php echo $bp['gejala'] ?></td>
-                                    <td>-</td>
+                                    <td><?php echo $p['kode_pengetahuan'] ?></td>
+                                    <td><?php foreach ($penyakit as $index => $pe) {
+                                            if ($pe['kode_penyakit'] == $p['kode_penyakit']) {
+                                                echo $pe['nama_penyakit'];
+                                            }
+                                        } ?></td>
+                                    <td><?php foreach ($gejala as $index => $g) {
+                                            if ($g['kode_gejala'] == $p['kode_gejala']) {
+                                                echo $g['gejala'];
+                                            }
+                                        } ?></td>
                                     <td class="text-center">
                                         <ul class="list-unstyled m-0">
                                             <li class="list-inline-item m-1">
-                                                <a href="<?php echo base_url('Admin/Pages/Manage_Knowladge_Base/Update_Knowladge_Base/') . $bp['id_pengetahuan'] ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
+                                                <a href="<?php echo base_url('Admin/Pages/Manage_Knowladge_Base/Update_Knowladge_Base/') . $p['kode_pengetahuan'] ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
                                             </li>
                                             <li class="list-inline-item m-1" onclick="javascript: return confirm('Hapus Data?')">
-                                                <a href="<?php echo base_url('Admin/Pages/Manage_Knowladge_Base/Delete_Knowladge_Base/') . $bp['id_pengetahuan'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                <a href="<?php echo base_url('Admin/Pages/Manage_Knowladge_Base/Delete_Knowladge_Base/') . $p['kode_pengetahuan'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
                                             </li>
                                         </ul>
                                     </td>

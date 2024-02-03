@@ -11,7 +11,7 @@ class Result_Test_Page extends CI_Controller
     {
         $data['nama'] = $this->session->userdata('nama');
         $data['id_pengguna'] = $this->session->userdata('id_pengguna');
-        $data['fuzzy'] = $this->M_Pengguna->getResult('hasil_diagnosis', $data['nama'], $data['id_pengguna']);
+        $data['fuzzy'] = $this->M_Pengguna->getResult('tes_fuzzy', $data['nama'], $data['id_pengguna']);
         $this->load->view('templates/header');
         $this->load->view('templates/navbar');
         $this->load->view('pages/result-test-page', $data);

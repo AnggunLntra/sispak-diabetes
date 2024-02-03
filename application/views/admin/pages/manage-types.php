@@ -22,30 +22,28 @@
                         <thead class="thead-light">
                             <tr>
                                 <th class="text-center" scope="col">No.</th>
-                                <th class="col-1 text-nowrap" scope="col">ID Jenis</th>
-                                <th scope="col-2">Jenis Diabetes</th>
-                                <th class="col-3" scope="col">Deskripsi</th>
-                                <th class="col-3" scope="col">Solusi</th>
-                                <th class="col-2 text-center" class="text-center">Aksi</th>
+                                <th>Kode Penyakit</th>
+                                <th>Nama Penyakit</th>
+                                <th class="col-4">Deskripsi</th>
+                                <th class="col-2 text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $no = 1;
-                            foreach ($jenis_diabetes as $jns) : ?>
+                            foreach ($penyakit as $p) : ?>
                                 <tr>
                                     <td class="text-center"><?php echo $no++ ?></td>
-                                    <td><?php echo $jns['id_jenis']; ?></td>
-                                    <td><?php echo $jns['jenis_dm']; ?></td>
-                                    <td><?php echo $jns['deskripsi']; ?></td>
-                                    <td><?php echo $jns['solusi']; ?></td>
+                                    <td><?php echo $p['kode_penyakit']; ?></td>
+                                    <td><?php echo $p['nama_penyakit']; ?></td>
+                                    <td><?php echo $p['deskripsi']; ?></td>
                                     <td class="text-center">
                                         <ul class="list-unstyled m-0">
                                             <li class="list-inline-item m-1">
-                                                <a href="<?php echo base_url('Admin/Pages/Manage_Types/Update_Types/') . $jns['id_jenis'] ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
+                                                <a href="<?php echo base_url('Admin/Pages/Manage_Types/Update_Types/') . $p['kode_penyakit'] ?>" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i></a>
                                             </li>
                                             <li class="list-inline-item m-1" onclick="javascript:return confirm('Hapus Data?')">
-                                                <a href="<?php echo base_url('Admin/Pages/Manage_Types/Delete_Types/') . $jns['id_jenis'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                                <a href="<?php echo base_url('Admin/Pages/Manage_Types/Delete_Types/') . $p['kode_penyakit'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
                                             </li>
                                         </ul>
                                     </td>

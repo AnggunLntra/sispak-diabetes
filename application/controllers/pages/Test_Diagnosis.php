@@ -1,5 +1,5 @@
 <?php
-class Test_Page extends CI_Controller
+class Test_Diagnosis extends CI_Controller
 {
 
     function __construct()
@@ -39,14 +39,15 @@ class Test_Page extends CI_Controller
             );
 
             $data_pengguna = array(
-                'nama' => $nama,
+                'nama'          => $nama,
+                'umur'          => $umur,
                 'jenis_kelamin' => $jenis_kelamin,
-                'status' => "pengguna",
+                'status'        => "pengguna",
             );
 
             $this->session->set_userdata($data_pengguna);
             $this->M_Pengguna->Create($data, 'pengguna');
-            redirect('Pages/Test/');
+            redirect('Pages/Diagnosis_Pages');
         }
     }
 

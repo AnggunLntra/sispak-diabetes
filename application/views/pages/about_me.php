@@ -8,7 +8,7 @@
                             <span class="fw-bold fs-2">Tentang <span class="text-uppercase text-danger">sipakar</span></span>
                         </div>
                         <div class="card-body">
-                            <p>SIPAKAR adalah aplikasi sistem pakar berbasis website yang dibuat dengan tujuan untuk memudahkan masyarakat dalam melakukan diagnosis secara dini penyakit yang diderita. Untuk saat ini sipakar hanya dapat melakukan diagnosis secara dini penyakit diabetes melitus berdasarkan gejala-gejala yang biasa dialami oleh kebanyakan penderita penyakit diabetes.</p>
+                            <p class="lh-sm">SIPAKAR adalah aplikasi sistem pakar berbasis website yang dibuat dengan tujuan untuk memudahkan masyarakat dalam melakukan diagnosis secara dini penyakit yang diderita. Untuk saat ini sipakar hanya dapat melakukan diagnosis secara dini penyakit diabetes melitus berdasarkan gejala-gejala yang biasa dialami oleh kebanyakan penderita penyakit diabetes.</p>
                         </div>
                         <div class="row">
                             <div class="col-12">
@@ -19,29 +19,29 @@
                                             <div class="row">
                                                 <div class="col-md-3 col-sm-6 mb-3">
                                                     <div class="card h-100 bg-danger py-2 text-center shadow">
-                                                        <div class="card-body d-flex justify-content-center align-items-center text-white">
-                                                            <span class="fw-bold">Tes Diagnosis</span>
+                                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                                            <a href="<?php echo base_url('Pages/Test_Diagnosis') ?>" class="link-underline link-underline-opacity-0 text-dark"><span class="fw-medium">Tes Diagnosis</span></a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 col-sm-6 mb-3">
-                                                    <div class="card h-100 bg-secondary py-2 text-center shadow">
-                                                        <div class="card-body d-flex justify-content-center align-items-center text-white">
-                                                            <span class="fw-bold">Jenis Diabetes</span>
+                                                    <div class="card h-100 bg-secondary-subtle py-2 text-center shadow">
+                                                        <div class="card-body d-flex justify-content-center align-items-center">
+                                                            <a href="<?php echo base_url('Pages/Diabetic_Types') ?>" class="link-underline link-underline-opacity-0 text-dark"><span class="fw-medium">Jenis Diabetes</span></a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 col-sm-6 mb-3">
                                                     <div class="card h-100 bg-danger  py-2 text-center shadow">
                                                         <div class="card-body d-flex justify-content-center align-items-center">
-                                                            <span class="fw-bold">Gejala Diabetes</span>
+                                                            <a href="<?php echo base_url('Pages/Diabetic_Symptoms') ?>" class="link-underline link-underline-opacity-0 text-dark"><span class="fw-medium">Gejala Diabetes</span></a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 col-sm-6 mb-3">
-                                                    <div class="card h-100 bg-secondary py-2 text-center shadow">
+                                                    <div class="card h-100 bg-secondary-subtle py-2 text-center shadow">
                                                         <div class="card-body d-flex justify-content-center align-items-center">
-                                                            <span class="fw-bold">Cara Penggunaan</span>
+                                                            <a href="<?php echo base_url('Pages/User_Guide') ?>" class="link-underline link-underline-opacity-0 text-dark"><span class="fw-medium">Cara Penggunaan</span></a>
                                                         </div>
                                                     </div>
                                                 </div>

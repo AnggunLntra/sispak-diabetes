@@ -1,19 +1,17 @@
 <div class="container min-vh-100" style="margin-top: 8rem;">
-    <h1 class="fw-bold text-center my-5">Jenis Diabetes</h1>
+    <h1 class="fw-bold text-danger text-center my-5">Jenis-Jenis Diabetes</h1>
     <div class="row">
         <?php
         $no = 1;
-        foreach ($jenis_diabetes as $jns) : ?>
+        foreach ($penyakit as $p) : ?>
             <div class="col-lg-4 mb-3 mb-lg-0">
-                <div class="card h-100 bg-light-subtle border-danger shadow">
-                    <div class="card-body">
-                        <div class="card-title text-center py-3">
-                            <span class="fs-4 fw-semibold"><?php echo $jns['jenis_dm'] ?></span>
+                <div class="card h-100 border-light shadow-sm">
+                    <div class="card-body text-dark">
+                        <div class="card-title text-md-center py-md-3">
+                            <span style="font-size: 1.3rem"><?php echo $p['nama_penyakit'] ?></span>
                         </div>
-                        <p class="fw-bold">Deskripsi :</p>
-                        <p class="fst-italic"><?php echo $jns['deskripsi'] ?></p>
-                        <p class="fw-bold">Solusi :</p>
-                        <p class="fst-italic"><?php echo $jns['solusi'] ?></p>
+                        <p class="fw-bold m-0">Deskripsi :</p>
+                        <p class="lh-sm" style="font-size: 1rem"><?php echo $p['deskripsi'] ?></p>
                     </div>
                 </div>
             </div>

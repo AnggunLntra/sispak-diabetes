@@ -11,9 +11,9 @@
                         $no = 1;
                         foreach ($gejala_diabetes as $gdb) : ?>
                             <div class="col-lg-3 mb-3">
-                                <div class="card h-100 bg-danger-subtle border-danger">
-                                    <div class="card-body d-flex align-items-center justify-content-center text-center">
-                                        <p class="m-0"><?php echo $gdb['gejala'] ?></p>
+                                <div class="card h-100 bg-light border-0 rounded-3 shadow-sm">
+                                    <div class="card-body d-md-flex justify-content-center align-items-center text-md-center">
+                                        <p class="fw-medium text-dark m-0"><span class="text-danger me-1"><?php $no++ . '.' ?></span><?php echo $gdb['gejala'] ?></p>
                                     </div>
                                 </div>
                             </div>

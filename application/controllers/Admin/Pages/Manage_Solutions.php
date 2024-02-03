@@ -1,6 +1,6 @@
 <?php
 
-class Manage_Conditions extends CI_Controller
+class Manage_Solutions extends CI_Controller
 {
 
     function __construct()
@@ -11,12 +11,15 @@ class Manage_Conditions extends CI_Controller
         $this->load->library('form_validation');
         $this->load->library('pagination');
         $this->load->model('M_Sispak');
+        if ($this->session->userdata('status') != "login") {
+            redirect('Admin/Pages/Login');
+        }
     }
 
     public function index()
     {
-        $config['base_url'] = site_url('Admin/Pages/Manage_Conditions/index');
-        $config['total_rows'] = $this->M_Sispak->countRows('kondisi');
+        $config['base_url'] = site_url('Admin/Pages/Manage_Solutions/index');
+        $config['total_rows'] = $this->M_Sispak->countRows('data_solusi');
         $config['per_page'] = 5;
 
         $config['uri_segment'] = 5;
@@ -42,100 +45,112 @@ class Manage_Conditions extends CI_Controller
         $config['last_tagl_close'] = '</span></li>';
 
         $data['page'] = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
-        $data['kondisi'] = $this->M_Sispak->getTable('kondisi', $config['per_page'], $data['page']);
+        $data['solusi'] = $this->M_Sispak->getTable('data_solusi', $config['per_page'], $data['page']);
 
         $this->pagination->initialize($config);
-        $data['halaman'] = 'Data Kondisi';
+        $data['halaman'] = 'Data Solusi';
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/manage-conditions', $data);
+        $this->load->view('admin/pages/manage-solution', $data);
         $this->load->view('admin/templates/footer');
     }
 
-    public function Create_Conditions()
+    public function Create_Solutions()
     {
-        $data['halaman'] = 'Tambah Kondisi';
+        $data['halaman'] = 'Tambah Solusi';
+        $data['penyakit'] = $this->M_Sispak->getTable('data_penyakit', '', '');
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/create-condition', $data);
+        $this->load->view('admin/pages/create-solution', $data);
         $this->load->view('admin/templates/footer');
     }
 
-    public function Create_Conditions_Action()
+    public function Create_Solutions_Action()
     {
         $this->_rules();
 
         if ($this->form_validation->run() === FALSE) {
-            $this->Create_Conditions();
+            $this->Create_Solutions();
         } else {
-            $id_kondisi               = $this->input->post('id_kondisi');
-            $kondisi                  = $this->input->post('kondisi');
+            $kode_solusi        = $this->input->post('kode_solusi');
+            $kode_penyakit      = $this->input->post('kode_penyakit');
+            $tingkat_risiko     = $this->input->post('tingkat_risiko');
+            $solusi             = $this->input->post('solusi');
 
             $data = array(
-                'id_kondisi'          => $id_kondisi,
-                'kondisi'             => $kondisi,
+                'kode_solusi'       => $kode_solusi,
+                'kode_penyakit'     => $kode_penyakit,
+                'tingkat_risiko'    => $tingkat_risiko,
+                'solusi'            => $solusi,
             );
 
-            $this->M_Sispak->Create($data, 'kondisi');
+            $this->M_Sispak->Create($data, 'data_solusi');
 
             $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
-            redirect('Admin/Pages/Manage_Conditions');
+            redirect('Admin/Pages/Manage_Solutions');
         }
     }
 
-    public function Update_Conditions($id)
+    public function Update_Solutions($id)
     {
-        $where = array('id_kondisi' => $id);
-        $data['halaman'] = 'Ubah Kondisi';
-        $data['kondisi'] = $this->M_Sispak->getData('kondisi', $where)->result();
+        $where = array('kode_solusi' => $id);
+        $data['halaman'] = 'Ubah Solusi';
+        $data['penyakit'] = $this->M_Sispak->getTable('data_penyakit', '', '');
+        $data['solusi'] = $this->M_Sispak->getData('data_solusi', $where)->result();
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
-        $this->load->view('admin/pages/update-condition', $data);
+        $this->load->view('admin/pages/update-solution', $data);
         $this->load->view('admin/templates/footer');
     }
 
-    public function Update_Conditions_Action($id)
+    public function Update_Solutions_Action($id)
     {
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->Update_Conditions($id);
+            $this->Update_Solutions($id);
         } else {
-            $id_kondisi          = $this->input->post('id_kondisi');
-            $kondisi             = $this->input->post('kondisi');
+            $kode_solusi        = $this->input->post('kode_solusi');
+            $kode_penyakit      = $this->input->post('kode_penyakit');
+            $solusi             = $this->input->post('solusi');
+            $tingkat_risiko     = $this->input->post('tingkat_risiko');
 
             $data = array(
-                'id_kondisi'     => $id_kondisi,
-                'kondisi'        => $kondisi,
+                'kode_solusi'       => $kode_solusi,
+                'kode_penyakit'     => $kode_penyakit,
+                'solusi'            => $solusi,
+                'tingkat_risiko'    => $tingkat_risiko,
             );
 
             $where = array(
-                'id_kondisi'     => $id
+                'kode_solusi'     => $id
             );
 
-            $this->M_Sispak->Update('kondisi', $data, $where);
+            $this->M_Sispak->Update('data_solusi', $data, $where);
             $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
-            redirect('Admin/Pages/Manage_Conditions');
+            redirect('Admin/Pages/Manage_Solutions');
         }
     }
 
-    public function Delete_Conditions($id)
+    public function Delete_Solutions($id)
     {
-        $where = array('id_kondisi' => $id);
-        $this->M_Sispak->Delete('kondisi', $where);
+        $where = array('kode_solusi' => $id);
+        $this->M_Sispak->Delete('data_solusi', $where);
         $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
-        redirect('Admin/Pages/Manage_Conditions');
+        redirect('Admin/Pages/Manage_Solutions');
     }
 
     public function _rules()
     {
 
         $this->form_validation->set_rules(
-            'id_kondisi',
-            'ID Kondisi',
+            'kode_solusi',
+            'Kode Solusi',
             'required'
         );
-        $this->form_validation->set_rules('kondisi', 'Kondisi', 'required');
+        $this->form_validation->set_rules('kode_penyakit', 'Nama Penyakit', 'required');
+        $this->form_validation->set_rules('solusi', 'Solusi', 'required');
+        $this->form_validation->set_rules('tingkat_risiko', 'Tingkat Risiko', 'required');
         $this->form_validation->set_message('required', '%s tidak boleh kosong');
     }
 }

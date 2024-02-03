@@ -12,12 +12,15 @@ class Manage_Knowladge_Base extends CI_Controller
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->library('pagination');
+        if ($this->session->userdata('status') != "login") {
+            redirect('Admin/Pages/Login');
+        }
     }
 
     public function index()
     {
         $config['base_url'] = site_url('Admin/Pages/Manage_Knowladge_Base/index');
-        $config['total_rows'] = $this->M_Sispak->countRows('basis_pengetahuan_sistem');
+        $config['total_rows'] = $this->M_Sispak->countRows('basis_pengetahuan');
         $config['per_page'] = 5;
 
         $config['uri_segment'] = 5;
@@ -43,8 +46,11 @@ class Manage_Knowladge_Base extends CI_Controller
         $config['last_tagl_close'] = '</span></li>';
 
         $data['page'] = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
-        $data['basis_pengetahuan_sistem'] = $this->M_Sispak->getTable('basis_pengetahuan_sistem', $config['per_page'], $data['page']);
-
+        $data['pengetahuan'] = $this->M_Sispak->getTable('basis_pengetahuan', $config['per_page'], $data['page']);
+        // $data['pengetahuan'] = $this->M_Sispak->getTable('basis_pengetahuan', '', '');
+        $data['penyakit'] = $this->M_Sispak->getTable('data_penyakit', '', '');
+        $data['gejala'] = $this->M_Sispak->getTable('data_gejala', '', '');
+        $data['join'] = $this->M_Sispak->getJoin();
         $this->pagination->initialize($config);
         $data['halaman'] = 'Data Basis Pengetahuan';
         $this->load->view('admin/templates/header', $data);
@@ -55,9 +61,9 @@ class Manage_Knowladge_Base extends CI_Controller
 
     public function Create_Knowladge_Base()
     {
-        $data['halaman'] = 'Tambah Basis Pengetahuan';
-        $data['jenis_diabetes'] = $this->M_Sispak->getTable('jenis_diabetes', '', '');
-        $data['gejala'] = $this->M_Sispak->getTable('gejala', '', '');
+        $data['halaman'] = 'Tambah Pengetahuan';
+        $data['penyakit'] = $this->M_Sispak->getTable('data_penyakit', '', '');
+        $data['gejala'] = $this->M_Sispak->getTable('data_gejala', '', '');
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/create-knowladge-base', $data);
@@ -71,21 +77,17 @@ class Manage_Knowladge_Base extends CI_Controller
         if ($this->form_validation->run() === FALSE) {
             $this->Create_Knowladge_Base();
         } else {
-            $id_pengetahuan          = $this->input->post('id_pengetahuan');
-            $jenis_dm                = $this->input->post('jenis_dm');
-            $gejala                  = $this->input->post('gejala');
-            // $nilai_keanggotaan       = $this->input->post('nilai_keanggotaan');
-            // $solusi                  = $this->input->post('solusi');
+            $kode_pengetahuan   = $this->input->post('kode_pengetahuan');
+            $kode_penyakit      = $this->input->post('kode_penyakit');
+            $kode_gejala        = $this->input->post('kode_gejala');
 
             $data = array(
-                'id_pengetahuan'        => $id_pengetahuan,
-                'jenis_dm'              => $jenis_dm,
-                'gejala'                => $gejala,
-                // 'nilai_keanggotaan'     => $nilai_keanggotaan,
-                // 'solusi'             => $solusi,
+                'kode_pengetahuan'  => $kode_pengetahuan,
+                'kode_penyakit'     => $kode_penyakit,
+                'kode_gejala'       => $kode_gejala,
             );
 
-            $this->M_Sispak->Create($data, 'basis_pengetahuan_sistem');
+            $this->M_Sispak->Create($data, 'basis_pengetahuan');
 
             $this->session->set_flashdata('pesan', 'Data Berhasil Ditambah');
             redirect('Admin/Pages/Manage_Knowladge_Base');
@@ -94,11 +96,11 @@ class Manage_Knowladge_Base extends CI_Controller
 
     public function Update_Knowladge_Base($id)
     {
-        $where = array('id_pengetahuan' => $id);
-        $data['halaman'] = 'Ubah Basis Pengetahuan';
-        $data['basis_pengetahuan_sistem'] = $this->M_Sispak->getData('basis_pengetahuan_sistem', $where)->result();
-        $data['jenis_diabetes'] = $this->M_Sispak->getTable('jenis_diabetes', '', '');
-        $data['gejala'] = $this->M_Sispak->getTable('gejala', '', '');
+        $where = array('kode_pengetahuan' => $id);
+        $data['halaman'] = 'Ubah Pengetahuan';
+        $data['pengetahuan'] = $this->M_Sispak->getData('basis_pengetahuan', $where)->result();
+        $data['penyakit'] = $this->M_Sispak->getTable('data_penyakit', '', '');
+        $data['gejala'] = $this->M_Sispak->getTable('data_gejala', '', '');
         $this->load->view('admin/templates/header', $data);
         $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/update-knowladge-base', $data);
@@ -112,25 +114,21 @@ class Manage_Knowladge_Base extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->Update_Knowladge_Base($id);
         } else {
-            $id_pengetahuan          = $this->input->post('id_pengetahuan');
-            $jenis_dm                = $this->input->post('jenis_dm');
-            $gejala                  = $this->input->post('gejala');
-            // $nilai_keanggotaan       = $this->input->post('nilai_keanggotaan');
-            // $solusi                  = $this->input->post('solusi');
+            $kode_pengetahuan   = $this->input->post('kode_pengetahuan');
+            $kode_penyakit      = $this->input->post('kode_penyakit');
+            $kode_gejala        = $this->input->post('kode_gejala');
 
             $data = array(
-                'id_pengetahuan'     => $id_pengetahuan,
-                'jenis_dm'           => $jenis_dm,
-                'gejala'             => $gejala,
-                // 'nilai_keanggotaan'  > $nilai_keanggotaan,
-                // 'solusi'             => $solusi,
+                'kode_pengetahuan'  => $kode_pengetahuan,
+                'kode_penyakit'     => $kode_penyakit,
+                'kode_gejala'       => $kode_gejala,
             );
 
             $where = array(
-                'id_pengetahuan' => $id
+                'kode_pengetahuan' => $id
             );
 
-            $this->M_Sispak->Update('basis_pengetahuan_sistem', $data, $where);
+            $this->M_Sispak->Update('basis_pengetahuan', $data, $where);
             $this->session->set_flashdata('pesan', 'Data Berhasil Diperbarui');
             redirect('Admin/Pages/Manage_Knowladge_Base');
         }
@@ -138,19 +136,28 @@ class Manage_Knowladge_Base extends CI_Controller
 
     public function Delete_Knowladge_Base($id)
     {
-        $where = array('id_pengetahuan' => $id);
+        $where = array('kode_pengetahuan' => $id);
 
-        $this->M_Sispak->Delete('basis_pengetahuan_sistem', $where);
+        $this->M_Sispak->Delete('basis_pengetahuan', $where);
         $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus');
         redirect('Admin/Pages/Manage_Knowladge_Base');
     }
 
+    public function test_knowladge()
+    {
+        $data['gejala'] = $this->M_Sispak->getTable('gejala', '', '');
+        $data['halaman'] = 'Data Basis Pengetahuan';
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/templates/sidebar');
+        $this->load->view('admin/pages/test', $data);
+        $this->load->view('admin/templates/footer');
+    }
+
     public function _rules()
     {
-        $this->form_validation->set_rules('id_pengetahuan', 'ID Pengetahuan', 'required');
-        $this->form_validation->set_rules('jenis_dm', 'Jenis Diabetes Melitus', 'required');
-        $this->form_validation->set_rules('gejala', 'Gejala Diabetes Melitus', 'required');
-        // $this->form_validation->set_rules('nilai_keanggotaan', 'Nilai Fuzzy', 'required');
+        $this->form_validation->set_rules('kode_pengetahuan', 'Kode Pengetahuan', 'required');
+        $this->form_validation->set_rules('kode_penyakit', 'Nama Penyakit', 'required');
+        $this->form_validation->set_rules('kode_gejala', 'Gejala', 'required');
         $this->form_validation->set_message('required', '%s tidak boleh kosong');
 
         // $this->form_validation->set_rules('solusi', 'solusi', 'required');

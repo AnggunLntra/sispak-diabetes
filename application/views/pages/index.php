@@ -3,10 +3,10 @@
         <div class="col-lg-6 d-flex mb-5 mb-lg-0 pt-sm-5">
             <div class="align-self-center">
                 <h1 class="fw-bold">Selamat Datang di <span class="text-uppercase text-danger">sipakar</span></h1>
-                <p class="fw-light">Sistem pakar diagnosis diabetes berbasis web menggunakan metode <span class="fw-bold fst-italic">fuzzy inference system</span> dan <span class="fw-bold fst-italic">forward chaining</span></p>
+                <p class="fw-light lh-sm">Sistem pakar diagnosis diabetes berbasis web menggunakan metode <span class="fw-bold fst-italic">fuzzy inference system</span> dan <span class="fw-bold fst-italic">forward chaining</span></p>
                 <div class="mt-4">
-                    <p class="mb-2">Klik tombol dibawah ini untuk memulai tes :</p>
-                    <a href="<?php echo base_url('pages/test_page') ?>" class="btn btn-danger">Tes Diabetes</a>
+                    <p class="mb-2">Klik tombol dibawah ini untuk memulai diagnosis :</p>
+                    <a href="<?php echo base_url('pages/test_diagnosis') ?>" class="btn btn-danger">Tes Diabetes</a>
                 </div>
             </div>
         </div>

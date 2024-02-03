@@ -44,4 +44,19 @@ class M_Sispak extends CI_Model
     {
         $this->db->delete($table, $where);
     }
+
+    function cek_login($table, $where)
+    {
+        return $this->db->get_where($table, $where);
+    }
+
+    public function getJoin()
+    {
+        $this->db->select('*');
+        $this->db->from('basis_pengetahuan');
+        $this->db->join('data_penyakit', 'data_penyakit.kode_penyakit = basis_pengetahuan.kode_penyakit');
+        $this->db->join('data_gejala', 'data_gejala.kode_gejala = basis_pengetahuan.kode_gejala');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }

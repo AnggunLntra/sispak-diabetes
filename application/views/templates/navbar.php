@@ -11,7 +11,7 @@
                         <a class="nav-link text-light active" aria-current="page" href="<?php echo base_url() ?>">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="<?php echo base_url('Pages/Test_Page') ?>">Tes Diabetes</a>
+                        <a class="nav-link text-light" href="<?php echo base_url('pages/test_diagnosis') ?>">Tes Diabetes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="<?php echo base_url('Pages/Diabetic_Types') ?>">Jenis Diabetes</a>
@@ -36,7 +36,7 @@
                     </li> -->
                 </ul>
                 <div class="d-flex">
-                    <a href="#" class="btn btn-md border"><span class="text-white">Masuk</span></a>
+                    <a href="<?php echo base_url('Admin/Pages/Login') ?>" class="btn btn-md border"><span class="text-white">Masuk</span></a>
                 </div>
             </div>
         </div>

@@ -6,69 +6,57 @@
             <div class="row justify-content-center">
                 <div class="col">
                     <div class="mb-5">
-                        <h4 class="text-center">Form Ubah Data</h4>
+                        <h4 class="text-center">Form Ubah Pengetahuan</h4>
                     </div>
-                    <?php foreach ($basis_pengetahuan_sistem as $bp) : ?>
-                        <form method="POST" action="<?php echo base_url('Admin/Pages/Manage_Knowladge_Base/Update_Knowladge_Base_Action/') . $bp->id_pengetahuan ?>">
+                    <?php foreach ($pengetahuan as $index => $p) : ?>
+                        <form method="POST" action="<?php echo base_url('Admin/Pages/Manage_Knowladge_Base/Update_Knowladge_Base_Action/') . $p->kode_pengetahuan ?>">
                             <div class="form-row">
                                 <div class="col">
                                     <div class="form-group row">
-                                        <label for="id_pengetahuan" class="col-sm-4 col-form-label">Id Pengetahuan</label>
+                                        <label for="kode_pengetahuan" class="col-sm-4 col-form-label">Kode Pengetahuan</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="id_pengetahuan" name="id_pengetahuan" value="<?php echo $bp->id_pengetahuan ?>">
+                                            <input type="text" class="form-control" id="kode_pengetahuan" name="kode_pengetahuan" value="<?php echo $p->kode_pengetahuan ?>">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group row">
-                                        <label for="jenis_dm" class="col-sm-4 col-form-label">Jenis Diabetes</label>
+                                        <label for="kode_penyakit" class="col-sm-4 col-form-label">Nama Penyakit</label>
                                         <div class="col-sm-8">
-                                            <select class="custom-select" id="jenis_dm" name="jenis_dm">
-                                                <option value="<?php echo $bp->jenis_dm ?>" selected><?php echo $bp->jenis_dm ?></option>
-                                                <?php foreach ($jenis_diabetes as $jns) : ?>
-                                                    <option value="<?php echo $jns['jenis_dm'] ?>"><?php echo $jns['jenis_dm'] ?> (<?php echo $jns['jenis_dm'] ?>)</option>
+                                            <select class="custom-select" id="kode_penyakit" name="kode_penyakit">
+                                                <option value="<?php echo $p->kode_penyakit ?>" selected><?php foreach ($penyakit as $index => $pe) {
+                                                                                                                if ($pe['kode_penyakit'] == $p->kode_penyakit) {
+                                                                                                                    echo $pe['nama_penyakit'];
+                                                                                                                }
+                                                                                                            } ?></option>
+                                                <?php foreach ($penyakit as $pe) : ?>
+                                                    <option value="<?php echo $pe['kode_penyakit'] ?>"><?php echo $pe['nama_penyakit'] ?></option>
                                                 <?php endforeach ?>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label for="gejala" class="col-sm-4 col-form-label">Gejala Diabetes</label>
-                                        <div class="col-sm-8">
-                                            <select class="custom-select" id="gejala" name="gejala">
-                                                <option value="<?php echo $bp->gejala ?>" selected><?php echo $bp->gejala ?></option>
-                                                <?php foreach ($gejala as $gjl) : ?>
-                                                    <option value="<?php echo $gjl['gejala'] ?>"><?php echo $gjl['gejala'] ?></option>
-                                                <?php endforeach ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label for="nilai_fuzzy" class="col-sm-4 col-form-label">Nilai Keanggotaan</label>
-                                        <div class="col-sm-8">
-                                            <input type="number" class="form-control" id="nilai_fuzzy" name="nilai_fuzzy" value="0.85">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="form-group row">
-                                <label for="solusi" class="col-sm-2 col-form-label">Solusi</label>
+                            <div class="form-group row">
+                                <label for="kode_gejala" class="col-sm-2 col-form-label">Gejala</label>
                                 <div class="col-sm-10">
-                                    <select class="custom-select" id="solusi" name="solusi">
-                                        <option selected>Choose...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                    <div>
+                                        <select class="custom-select" id="kode_gejala" name="kode_gejala">
+                                            <option value="<?php echo $p->kode_gejala ?>" selected><?php foreach ($gejala as $index => $g) {
+                                                                                                        if ($g['kode_gejala'] == $p->kode_gejala) {
+                                                                                                            echo $g['gejala'];
+                                                                                                        }
+                                                                                                    } ?></option>
+                                            <?php foreach ($gejala as $g) : ?>
+                                                <option value="<?php echo $g['kode_gejala'] ?>"><?php echo $g['gejala'] ?></option>
+                                            <?php endforeach ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div> -->
+                            </div>
+
                             <div class="d-flex justify-content-end">
-                                <a href="#" class="btn btn-light border"><i class="fa fa-long-arrow-left"></i><span class="pl-3">Kembali</span></a>
+                                <a href="<?php echo base_url() . 'Admin/Pages/Manage_Knowladge_Base' ?>" class="btn btn-light border"><i class="fa fa-long-arrow-left"></i><span class="pl-3">Kembali</span></a>
                                 <button type="submit" class="btn btn-primary ml-3" onclick="javascript:return confirm('Simpan Perubahan?')"><i class="fa fa-save"></i><span class="pl-3">Simpan Perubahan</span></button>
                             </div>
                         </form>
