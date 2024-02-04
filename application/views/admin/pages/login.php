@@ -1,7 +1,21 @@
 <div class="container-fluid bg-white">
-    <div class="row align-items-center justify-content-around flex-wrap-reverse">
-        <div class="col-md-5">
-            <img class="img-fluid" src="<?php echo base_url('assets/img/login-img.jpg') ?>">
+    <div class="row align-items-center justify-content-around">
+        <div class="col-md-9 d-none d-md-inline p-0">
+            <div class="row">
+                <div class="col">
+                    <div class="px-3 pt-3">
+                        <div class="d-grid gap-1">
+                            <span class="text-danger fw-bolder h3 m-0">Selamat Datang</span>
+                            <div class="w-75 border-top border-3 border-danger"></div>
+                            <div class="w-50 border-top border-3 border-danger"></div>
+                            <div class="w-25 border-top border-3 border-danger"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <img class="img-fluid" src="<?php echo base_url('assets/img/login-img.jpg') ?>">
+                </div>
+            </div>
         </div>
         <div class="col-md-3 d-flex align-items-center justify-content-center min-vh-100">
             <div class="card w-100 py-3 border-0">

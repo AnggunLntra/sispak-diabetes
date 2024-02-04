@@ -16,8 +16,8 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col">
+            <div class="row overflow-hidden">
+                <div class="col overflow-x-scroll">
                     <table class="table table-responsive table-hover border">
                         <thead class="thead-light">
                             <tr>
