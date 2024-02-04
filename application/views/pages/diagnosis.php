@@ -47,9 +47,17 @@
                 <?php foreach ($gejala as $g) : ?>
                     <div class="group-control py-1">
                         <div class="row">
-                            <div class="col-md-6">
-                                <label for="<?php echo $g['kode_gejala'] ?>" class="col-form-label"><?php echo $g['gejala'] ?></label>
-                            </div>
+                            <?php if ($jenis_kelamin != 'Perempuan') {
+                                echo '
+                                <div class="col-md-6">
+                                <label for=' . $g['kode_gejala'] . ' class="col-form-label"><span>' . $g['gejala'] . '</span></label>
+                            </div>';
+                            } else {
+                                echo '
+                                <div class="col-md-6">
+                                <label for=' . $g['kode_gejala'] . ' class="col-form-label"><span>' . $g['gejala'] . '</span></label>
+                            </div>';
+                            } ?>
                             <div class="col-md-6">
                                 <select name="<?php echo $g['kode_gejala'] ?>" class="costum-select form-control">
                                     <option value="Tidak">Tidak</option>

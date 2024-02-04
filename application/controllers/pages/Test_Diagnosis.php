@@ -42,7 +42,7 @@ class Test_Diagnosis extends CI_Controller
                 'nama'          => $nama,
                 'umur'          => $umur,
                 'jenis_kelamin' => $jenis_kelamin,
-                'status'        => "pengguna",
+                'status'        => "terdaftar",
             );
 
             $this->session->set_userdata($data_pengguna);

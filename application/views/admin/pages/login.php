@@ -1,5 +1,8 @@
 <div class="container-fluid bg-white">
-    <div class="row align-items-center justify-content-center ">
+    <div class="row align-items-center justify-content-around flex-wrap-reverse">
+        <div class="col-md-5">
+            <img class="img-fluid" src="<?php echo base_url('assets/img/login-img.jpg') ?>">
+        </div>
         <div class="col-md-3 d-flex align-items-center justify-content-center min-vh-100">
             <div class="card w-100 py-3 border-0">
                 <div class="card-body">

@@ -9,11 +9,15 @@ class Diagnosis_Pages extends CI_Controller
         $this->load->library('session');
         $this->load->library('form_validation');
         $this->load->model('M_Pengguna');
+        if ($this->session->userdata('status') != "terdaftar") {
+            redirect('Pages/Test_Diagnosis');
+        }
     }
 
     public function index()
     {
         $data['user'] = $this->session->userdata('nama');
+        $data['jenis_kelamin'] = $this->session->userdata('jenis_kelamin');
         $data['gejala'] = $this->M_Pengguna->getTable('data_gejala');
         $id_pengguna = $this->M_Pengguna->getId('pengguna', $data['user']);
         foreach ($id_pengguna as $id) {
@@ -241,6 +245,8 @@ class Diagnosis_Pages extends CI_Controller
                     return ($input - 0.50) / (1 - 0.50);
                 }
             }
+
+
 
             //Diabetes Tipe A
 

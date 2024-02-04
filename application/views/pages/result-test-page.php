@@ -1,6 +1,7 @@
 <div class="container" style="margin-top: 8rem;">
     <div class="col-lg-12 min-vh-100">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center flex-wrap-reverse">
+            <div class="col-lg-4 d-flex align-items-end"><img class="img-fluid" src="<?php echo base_url('assets/img/result-bg.jpg') ?>"></div>
             <div class="col-lg-8">
                 <div class="card mb-4">
                     <!-- <div class="card-title text-white bg-success rounded-top p-lg-5 p-3 border-bottom">

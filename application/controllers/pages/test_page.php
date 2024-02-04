@@ -41,7 +41,7 @@ class Test_Page extends CI_Controller
             $data_pengguna = array(
                 'nama' => $nama,
                 'jenis_kelamin' => $jenis_kelamin,
-                'status' => "pengguna",
+                'status' => "terdaftar",
             );
 
             $this->session->set_userdata($data_pengguna);

@@ -14,7 +14,7 @@
                     <div class="group-control py-1">
                         <div class="row">
                             <div class="col">
-                                <label for="jawaban" class="col-form-label"><?php echo $no++ ?>. <?php echo $gjl['gejala'] ?></label>
+                                <label for="jawaban" class="col-form-label"><?php echo $no++ ?>. Apakah anda mengalami gejala <?php echo $gjl['gejala'] ?></label>
                             </div>
                             <div class="col-3">
                                 <select name="jawaban[]" class="costum-select form-control">
